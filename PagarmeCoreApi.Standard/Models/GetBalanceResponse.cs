@@ -24,6 +24,8 @@ namespace PagarmeCoreApi.Standard.Models
         private string currency;
         private int availableAmount;
         private Models.GetRecipientResponse recipient;
+        private int transferredAmount;
+        private int waitingFundsAmount;
 
         /// <summary>
         /// Currency
@@ -73,6 +75,40 @@ namespace PagarmeCoreApi.Standard.Models
             {
                 this.recipient = value;
                 onPropertyChanged("Recipient");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("transferred_amount")]
+        public int TransferredAmount 
+        { 
+            get 
+            {
+                return this.transferredAmount; 
+            } 
+            set 
+            {
+                this.transferredAmount = value;
+                onPropertyChanged("TransferredAmount");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("waiting_funds_amount")]
+        public int WaitingFundsAmount 
+        { 
+            get 
+            {
+                return this.waitingFundsAmount; 
+            } 
+            set 
+            {
+                this.waitingFundsAmount = value;
+                onPropertyChanged("WaitingFundsAmount");
             }
         }
     }
