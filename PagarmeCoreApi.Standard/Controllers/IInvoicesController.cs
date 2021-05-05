@@ -110,6 +110,7 @@ namespace PagarmeCoreApi.Standard.Controllers
         /// <param name="dueSince">Optional parameter: Filter for Invoice's due date start range</param>
         /// <param name="dueUntil">Optional parameter: Filter for Invoice's due date end range</param>
         /// <param name="document">Optional parameter: Example: </param>
+        /// <param name="customerDocument">Optional parameter: Example: </param>
         /// <return>Returns the Models.ListInvoicesResponse response from the API call</return>
         Models.ListInvoicesResponse GetInvoices(
                 int? page = null,
@@ -122,7 +123,8 @@ namespace PagarmeCoreApi.Standard.Controllers
                 string status = null,
                 DateTime? dueSince = null,
                 DateTime? dueUntil = null,
-                string document = null);
+                string document = null,
+                string customerDocument = null);
 
         /// <summary>
         /// Gets all invoices
@@ -138,6 +140,7 @@ namespace PagarmeCoreApi.Standard.Controllers
         /// <param name="dueSince">Optional parameter: Filter for Invoice's due date start range</param>
         /// <param name="dueUntil">Optional parameter: Filter for Invoice's due date end range</param>
         /// <param name="document">Optional parameter: Example: </param>
+        /// <param name="customerDocument">Optional parameter: Example: </param>
         /// <return>Returns the Models.ListInvoicesResponse response from the API call</return>
         Task<Models.ListInvoicesResponse> GetInvoicesAsync(
                 int? page = null,
@@ -150,7 +153,8 @@ namespace PagarmeCoreApi.Standard.Controllers
                 string status = null,
                 DateTime? dueSince = null,
                 DateTime? dueUntil = null,
-                string document = null);
+                string document = null,
+                string customerDocument = null);
 
         /// <summary>
         /// Gets an invoice
