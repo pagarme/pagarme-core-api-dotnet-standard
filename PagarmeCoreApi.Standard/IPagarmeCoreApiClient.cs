@@ -12,11 +12,6 @@ namespace PagarmeCoreApi.Standard
     {
 
         /// <summary>
-        /// Singleton access to Plans controller
-        /// </summary>
-        IPlansController Plans { get;}
-
-        /// <summary>
         /// Singleton access to Subscriptions controller
         /// </summary>
         ISubscriptionsController Subscriptions { get;}
@@ -25,6 +20,11 @@ namespace PagarmeCoreApi.Standard
         /// Singleton access to Orders controller
         /// </summary>
         IOrdersController Orders { get;}
+
+        /// <summary>
+        /// Singleton access to Plans controller
+        /// </summary>
+        IPlansController Plans { get;}
 
         /// <summary>
         /// Singleton access to Invoices controller
@@ -40,11 +40,6 @@ namespace PagarmeCoreApi.Standard
         /// Singleton access to Charges controller
         /// </summary>
         IChargesController Charges { get;}
-
-        /// <summary>
-        /// Singleton access to Transfers controller
-        /// </summary>
-        ITransfersController Transfers { get;}
 
         /// <summary>
         /// Singleton access to Recipients controller
@@ -65,6 +60,11 @@ namespace PagarmeCoreApi.Standard
         /// Singleton access to Transactions controller
         /// </summary>
         ITransactionsController Transactions { get;}
+
+        /// <summary>
+        /// Singleton access to Transfers controller
+        /// </summary>
+        ITransfersController Transfers { get;}
 
     }
 }

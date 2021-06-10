@@ -89,340 +89,17 @@ PagarmeCoreApiClient client = new PagarmeCoreApiClient(basicAuthUserName, basicA
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [PlansController](#plans_controller)
 * [SubscriptionsController](#subscriptions_controller)
 * [OrdersController](#orders_controller)
+* [PlansController](#plans_controller)
 * [InvoicesController](#invoices_controller)
 * [CustomersController](#customers_controller)
 * [ChargesController](#charges_controller)
-* [TransfersController](#transfers_controller)
 * [RecipientsController](#recipients_controller)
 * [TokensController](#tokens_controller)
 * [SellersController](#sellers_controller)
 * [TransactionsController](#transactions_controller)
-
-## <a name="plans_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.PlansController") PlansController
-
-### Get singleton instance
-
-The singleton instance of the ``` PlansController ``` class can be accessed from the API Client.
-
-```csharp
-IPlansController plans = client.Plans;
-```
-
-### <a name="get_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.GetPlan") GetPlan
-
-> Gets a plan
-
-
-```csharp
-Task<Models.GetPlanResponse> GetPlan(string planId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-
-Models.GetPlanResponse result = await plans.GetPlan(planId);
-
-```
-
-
-### <a name="update_plan_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.UpdatePlanMetadata") UpdatePlanMetadata
-
-> Updates the metadata from a plan
-
-
-```csharp
-Task<Models.GetPlanResponse> UpdatePlanMetadata(string planId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | The plan id |
-| request |  ``` Required ```  | Request for updating the plan metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-var request = new Models.UpdateMetadataRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetPlanResponse result = await plans.UpdatePlanMetadata(planId, request, idempotencyKey);
-
-```
-
-
-### <a name="update_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.UpdatePlanItem") UpdatePlanItem
-
-> Updates a plan item
-
-
-```csharp
-Task<Models.GetPlanItemResponse> UpdatePlanItem(
-        string planId,
-        string planItemId,
-        Models.UpdatePlanItemRequest body,
-        string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| planItemId |  ``` Required ```  | Plan item id |
-| body |  ``` Required ```  | Request for updating the plan item |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-string planItemId = "plan_item_id";
-var body = new Models.UpdatePlanItemRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetPlanItemResponse result = await plans.UpdatePlanItem(planId, planItemId, body, idempotencyKey);
-
-```
-
-
-### <a name="create_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.CreatePlanItem") CreatePlanItem
-
-> Adds a new item to a plan
-
-
-```csharp
-Task<Models.GetPlanItemResponse> CreatePlanItem(string planId, Models.CreatePlanItemRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| request |  ``` Required ```  | Request for creating a plan item |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-var request = new Models.CreatePlanItemRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetPlanItemResponse result = await plans.CreatePlanItem(planId, request, idempotencyKey);
-
-```
-
-
-### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.GetPlanItem") GetPlanItem
-
-> Gets a plan item
-
-
-```csharp
-Task<Models.GetPlanItemResponse> GetPlanItem(string planId, string planItemId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| planItemId |  ``` Required ```  | Plan item id |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-string planItemId = "plan_item_id";
-
-Models.GetPlanItemResponse result = await plans.GetPlanItem(planId, planItemId);
-
-```
-
-
-### <a name="create_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.CreatePlan") CreatePlan
-
-> Creates a new plan
-
-
-```csharp
-Task<Models.GetPlanResponse> CreatePlan(Models.CreatePlanRequest body, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a plan |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CreatePlanRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetPlanResponse result = await plans.CreatePlan(body, idempotencyKey);
-
-```
-
-
-### <a name="delete_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.DeletePlanItem") DeletePlanItem
-
-> Removes an item from a plan
-
-
-```csharp
-Task<Models.GetPlanItemResponse> DeletePlanItem(string planId, string planItemId, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| planItemId |  ``` Required ```  | Plan item id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-string planItemId = "plan_item_id";
-string idempotencyKey = "idempotency-key";
-
-Models.GetPlanItemResponse result = await plans.DeletePlanItem(planId, planItemId, idempotencyKey);
-
-```
-
-
-### <a name="get_plans"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.GetPlans") GetPlans
-
-> Gets all plans
-
-
-```csharp
-Task<Models.ListPlansResponse> GetPlans(
-        int? page = null,
-        int? size = null,
-        string name = null,
-        string status = null,
-        string billingType = null,
-        DateTime? createdSince = null,
-        DateTime? createdUntil = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| name |  ``` Optional ```  | Filter for Plan's name |
-| status |  ``` Optional ```  | Filter for Plan's status |
-| billingType |  ``` Optional ```  | Filter for plan's billing type |
-| createdSince |  ``` Optional ```  | Filter for plan's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for plan's creation date end range |
-
-
-#### Example Usage
-
-```csharp
-int? page = 113;
-int? size = 113;
-string name = "name";
-string status = "status";
-string billingType = "billing_type";
-DateTime? createdSince = DateTime.Now();
-DateTime? createdUntil = DateTime.Now();
-
-Models.ListPlansResponse result = await plans.GetPlans(page, size, name, status, billingType, createdSince, createdUntil);
-
-```
-
-
-### <a name="update_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.UpdatePlan") UpdatePlan
-
-> Updates a plan
-
-
-```csharp
-Task<Models.GetPlanResponse> UpdatePlan(string planId, Models.UpdatePlanRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| request |  ``` Required ```  | Request for updating a plan |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-var request = new Models.UpdatePlanRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetPlanResponse result = await plans.UpdatePlan(planId, request, idempotencyKey);
-
-```
-
-
-### <a name="delete_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.DeletePlan") DeletePlan
-
-> Deletes a plan
-
-
-```csharp
-Task<Models.GetPlanResponse> DeletePlan(string planId, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| planId |  ``` Required ```  | Plan id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string planId = "plan_id";
-string idempotencyKey = "idempotency-key";
-
-Models.GetPlanResponse result = await plans.DeletePlan(planId, idempotencyKey);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
+* [TransfersController](#transfers_controller)
 
 ## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController") SubscriptionsController
 
@@ -433,6 +110,64 @@ The singleton instance of the ``` SubscriptionsController ``` class can be acces
 ```csharp
 ISubscriptionsController subscriptions = client.Subscriptions;
 ```
+
+### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetIncrementById") GetIncrementById
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetIncrementResponse> GetIncrementById(string subscriptionId, string incrementId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription Id |
+| incrementId |  ``` Required ```  | The increment Id |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+string incrementId = "increment_id";
+
+Models.GetIncrementResponse result = await subscriptions.GetIncrementById(subscriptionId, incrementId);
+
+```
+
+
+### <a name="update_subscription_start_at"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionStartAt") UpdateSubscriptionStartAt
+
+> Updates the start at date from a subscription
+
+
+```csharp
+Task<Models.GetSubscriptionResponse> UpdateSubscriptionStartAt(string subscriptionId, Models.UpdateSubscriptionStartAtRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| request |  ``` Required ```  | Request for updating the subscription start date |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+var request = new Models.UpdateSubscriptionStartAtRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionStartAt(subscriptionId, request, idempotencyKey);
+
+```
+
 
 ### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionCard") UpdateSubscriptionCard
 
@@ -464,16 +199,16 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionCa
 ```
 
 
-### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteUsage") DeleteUsage
+### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionItem") UpdateSubscriptionItem
 
-> Deletes a usage
+> Updates a subscription item
 
 
 ```csharp
-Task<Models.GetUsageResponse> DeleteUsage(
+Task<Models.GetSubscriptionItemResponse> UpdateSubscriptionItem(
         string subscriptionId,
         string itemId,
-        string usageId,
+        Models.UpdateSubscriptionItemRequest body,
         string idempotencyKey = null)
 ```
 
@@ -481,70 +216,9 @@ Task<Models.GetUsageResponse> DeleteUsage(
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| itemId |  ``` Required ```  | The subscription item id |
-| usageId |  ``` Required ```  | The usage id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-string itemId = "item_id";
-string usageId = "usage_id";
-string idempotencyKey = "idempotency-key";
-
-Models.GetUsageResponse result = await subscriptions.DeleteUsage(subscriptionId, itemId, usageId, idempotencyKey);
-
-```
-
-
-### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateDiscount") CreateDiscount
-
-> Creates a discount
-
-
-```csharp
-Task<Models.GetDiscountResponse> CreateDiscount(string subscriptionId, Models.CreateDiscountRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for creating a discount |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-var request = new Models.CreateDiscountRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetDiscountResponse result = await subscriptions.CreateDiscount(subscriptionId, request, idempotencyKey);
-
-```
-
-
-### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateAnUsage") CreateAnUsage
-
-> Create Usage
-
-
-```csharp
-Task<Models.GetUsageResponse> CreateAnUsage(string subscriptionId, string itemId, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
+| subscriptionId |  ``` Required ```  | Subscription Id |
 | itemId |  ``` Required ```  | Item id |
+| body |  ``` Required ```  | Request for updating a subscription item |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -553,20 +227,25 @@ Task<Models.GetUsageResponse> CreateAnUsage(string subscriptionId, string itemId
 ```csharp
 string subscriptionId = "subscription_id";
 string itemId = "item_id";
+var body = new Models.UpdateSubscriptionItemRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetUsageResponse result = await subscriptions.CreateAnUsage(subscriptionId, itemId, idempotencyKey);
+Models.GetSubscriptionItemResponse result = await subscriptions.UpdateSubscriptionItem(subscriptionId, itemId, body, idempotencyKey);
 
 ```
 
 
-### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateCurrentCycleStatus") UpdateCurrentCycleStatus
+### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateUsage") CreateUsage
 
-> TODO: Add a method description
+> Creates a usage
 
 
 ```csharp
-Task UpdateCurrentCycleStatus(string subscriptionId, Models.UpdateCurrentCycleStatusRequest request, string idempotencyKey = null)
+Task<Models.GetUsageResponse> CreateUsage(
+        string subscriptionId,
+        string itemId,
+        Models.CreateUsageRequest body,
+        string idempotencyKey = null)
 ```
 
 #### Parameters
@@ -574,7 +253,8 @@ Task UpdateCurrentCycleStatus(string subscriptionId, Models.UpdateCurrentCycleSt
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription Id |
-| request |  ``` Required ```  | Request for updating the end date of the subscription current status |
+| itemId |  ``` Required ```  | Item id |
+| body |  ``` Required ```  | Request for creating a usage |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -582,10 +262,37 @@ Task UpdateCurrentCycleStatus(string subscriptionId, Models.UpdateCurrentCycleSt
 
 ```csharp
 string subscriptionId = "subscription_id";
-var request = new Models.UpdateCurrentCycleStatusRequest();
+string itemId = "item_id";
+var body = new Models.CreateUsageRequest();
 string idempotencyKey = "idempotency-key";
 
-await subscriptions.UpdateCurrentCycleStatus(subscriptionId, request, idempotencyKey);
+Models.GetUsageResponse result = await subscriptions.CreateUsage(subscriptionId, itemId, body, idempotencyKey);
+
+```
+
+
+### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscription") GetSubscription
+
+> Gets a subscription
+
+
+```csharp
+Task<Models.GetSubscriptionResponse> GetSubscription(string subscriptionId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+
+Models.GetSubscriptionResponse result = await subscriptions.GetSubscription(subscriptionId);
 
 ```
 
@@ -620,13 +327,41 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionPa
 ```
 
 
-### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteDiscount") DeleteDiscount
+### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateSubscription") CreateSubscription
 
-> Deletes a discount
+> Creates a new subscription
 
 
 ```csharp
-Task<Models.GetDiscountResponse> DeleteDiscount(string subscriptionId, string discountId, string idempotencyKey = null)
+Task<Models.GetSubscriptionResponse> CreateSubscription(Models.CreateSubscriptionRequest body, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Request for creating a subscription |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CreateSubscriptionRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSubscriptionResponse result = await subscriptions.CreateSubscription(body, idempotencyKey);
+
+```
+
+
+### <a name="create_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateSubscriptionItem") CreateSubscriptionItem
+
+> Creates a new Subscription item
+
+
+```csharp
+Task<Models.GetSubscriptionItemResponse> CreateSubscriptionItem(string subscriptionId, Models.CreateSubscriptionItemRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
@@ -634,7 +369,7 @@ Task<Models.GetDiscountResponse> DeleteDiscount(string subscriptionId, string di
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription id |
-| discountId |  ``` Required ```  | Discount Id |
+| request |  ``` Required ```  | Request for creating a subscription item |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -642,61 +377,40 @@ Task<Models.GetDiscountResponse> DeleteDiscount(string subscriptionId, string di
 
 ```csharp
 string subscriptionId = "subscription_id";
-string discountId = "discount_id";
+var request = new Models.CreateSubscriptionItemRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetDiscountResponse result = await subscriptions.DeleteDiscount(subscriptionId, discountId, idempotencyKey);
+Models.GetSubscriptionItemResponse result = await subscriptions.CreateSubscriptionItem(subscriptionId, request, idempotencyKey);
 
 ```
 
 
-### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscriptionItems") GetSubscriptionItems
+### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateDiscount") CreateDiscount
 
-> Get Subscription Items
+> Creates a discount
 
 
 ```csharp
-Task<Models.ListSubscriptionItemsResponse> GetSubscriptionItems(
-        string subscriptionId,
-        int? page = null,
-        int? size = null,
-        string name = null,
-        string code = null,
-        string status = null,
-        string description = null,
-        string createdSince = null,
-        string createdUntil = null)
+Task<Models.GetDiscountResponse> CreateDiscount(string subscriptionId, Models.CreateDiscountRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| name |  ``` Optional ```  | The item name |
-| code |  ``` Optional ```  | Identification code in the client system |
-| status |  ``` Optional ```  | The item statis |
-| description |  ``` Optional ```  | The item description |
-| createdSince |  ``` Optional ```  | Filter for item's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for item's creation date end range |
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for creating a discount |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
 string subscriptionId = "subscription_id";
-int? page = 113;
-int? size = 113;
-string name = "name";
-string code = "code";
-string status = "status";
-string description = "description";
-string createdSince = "created_since";
-string createdUntil = "created_until";
+var request = new Models.CreateDiscountRequest();
+string idempotencyKey = "idempotency-key";
 
-Models.ListSubscriptionItemsResponse result = await subscriptions.GetSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil);
+Models.GetDiscountResponse result = await subscriptions.CreateDiscount(subscriptionId, request, idempotencyKey);
 
 ```
 
@@ -725,6 +439,66 @@ string subscriptionId = "subscription_id";
 string itemId = "item_id";
 
 Models.GetSubscriptionItemResponse result = await subscriptions.GetSubscriptionItem(subscriptionId, itemId);
+
+```
+
+
+### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionAffiliationId") UpdateSubscriptionAffiliationId
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetSubscriptionResponse> UpdateSubscriptionAffiliationId(string subscriptionId, Models.UpdateSubscriptionAffiliationIdRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | Request for updating a subscription affiliation id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+var request = new Models.UpdateSubscriptionAffiliationIdRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionAffiliationId(subscriptionId, request, idempotencyKey);
+
+```
+
+
+### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateAnUsage") CreateAnUsage
+
+> Create Usage
+
+
+```csharp
+Task<Models.GetUsageResponse> CreateAnUsage(string subscriptionId, string itemId, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| itemId |  ``` Required ```  | Item id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+string itemId = "item_id";
+string idempotencyKey = "idempotency-key";
+
+Models.GetUsageResponse result = await subscriptions.CreateAnUsage(subscriptionId, itemId, idempotencyKey);
 
 ```
 
@@ -771,8 +545,8 @@ Task<Models.ListSubscriptionsResponse> GetSubscriptions(
 #### Example Usage
 
 ```csharp
-int? page = 113;
-int? size = 113;
+int? page = 128;
+int? size = 128;
 string code = "code";
 string billingType = "billing_type";
 string customerId = "customer_id";
@@ -785,188 +559,6 @@ DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
 
 Models.ListSubscriptionsResponse result = await subscriptions.GetSubscriptions(page, size, code, billingType, customerId, planId, cardId, status, nextBillingSince, nextBillingUntil, createdSince, createdUntil);
-
-```
-
-
-### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CancelSubscription") CancelSubscription
-
-> Cancels a subscription
-
-
-```csharp
-Task<Models.GetSubscriptionResponse> CancelSubscription(string subscriptionId, Models.CreateCancelSubscriptionRequest request = null, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Optional ```  | Request for cancelling a subscription |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-var request = new Models.CreateCancelSubscriptionRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSubscriptionResponse result = await subscriptions.CancelSubscription(subscriptionId, request, idempotencyKey);
-
-```
-
-
-### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateIncrement") CreateIncrement
-
-> Creates a increment
-
-
-```csharp
-Task<Models.GetIncrementResponse> CreateIncrement(string subscriptionId, Models.CreateIncrementRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for creating a increment |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-var request = new Models.CreateIncrementRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetIncrementResponse result = await subscriptions.CreateIncrement(subscriptionId, request, idempotencyKey);
-
-```
-
-
-### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateUsage") CreateUsage
-
-> Creates a usage
-
-
-```csharp
-Task<Models.GetUsageResponse> CreateUsage(
-        string subscriptionId,
-        string itemId,
-        Models.CreateUsageRequest body,
-        string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| itemId |  ``` Required ```  | Item id |
-| body |  ``` Required ```  | Request for creating a usage |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-string itemId = "item_id";
-var body = new Models.CreateUsageRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetUsageResponse result = await subscriptions.CreateUsage(subscriptionId, itemId, body, idempotencyKey);
-
-```
-
-
-### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateSubscription") CreateSubscription
-
-> Creates a new subscription
-
-
-```csharp
-Task<Models.GetSubscriptionResponse> CreateSubscription(Models.CreateSubscriptionRequest body, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating a subscription |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CreateSubscriptionRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSubscriptionResponse result = await subscriptions.CreateSubscription(body, idempotencyKey);
-
-```
-
-
-### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetDiscountById") GetDiscountById
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetDiscountResponse> GetDiscountById(string subscriptionId, string discountId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| discountId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-string discountId = "discountId";
-
-Models.GetDiscountResponse result = await subscriptions.GetDiscountById(subscriptionId, discountId);
-
-```
-
-
-### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionAffiliationId") UpdateSubscriptionAffiliationId
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetSubscriptionResponse> UpdateSubscriptionAffiliationId(string subscriptionId, Models.UpdateSubscriptionAffiliationIdRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | TODO: Add a parameter description |
-| request |  ``` Required ```  | Request for updating a subscription affiliation id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-var request = new Models.UpdateSubscriptionAffiliationIdRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionAffiliationId(subscriptionId, request, idempotencyKey);
 
 ```
 
@@ -1001,154 +593,6 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionMe
 ```
 
 
-### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteIncrement") DeleteIncrement
-
-> Deletes a increment
-
-
-```csharp
-Task<Models.GetIncrementResponse> DeleteIncrement(string subscriptionId, string incrementId, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-| incrementId |  ``` Required ```  | Increment id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-string incrementId = "increment_id";
-string idempotencyKey = "idempotency-key";
-
-Models.GetIncrementResponse result = await subscriptions.DeleteIncrement(subscriptionId, incrementId, idempotencyKey);
-
-```
-
-
-### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscriptionCycles") GetSubscriptionCycles
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ListCyclesResponse> GetSubscriptionCycles(string subscriptionId, string page, string size)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| page |  ``` Required ```  | Page number |
-| size |  ``` Required ```  | Page size |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-string page = "page";
-string size = "size";
-
-Models.ListCyclesResponse result = await subscriptions.GetSubscriptionCycles(subscriptionId, page, size);
-
-```
-
-
-### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetIncrementById") GetIncrementById
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetIncrementResponse> GetIncrementById(string subscriptionId, string incrementId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription Id |
-| incrementId |  ``` Required ```  | The increment Id |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-string incrementId = "increment_id";
-
-Models.GetIncrementResponse result = await subscriptions.GetIncrementById(subscriptionId, incrementId);
-
-```
-
-
-### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetDiscounts") GetDiscounts
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.ListDiscountsResponse> GetDiscounts(string subscriptionId, int page, int size)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| page |  ``` Required ```  | Page number |
-| size |  ``` Required ```  | Page size |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-int page = 113;
-int size = 113;
-
-Models.ListDiscountsResponse result = await subscriptions.GetDiscounts(subscriptionId, page, size);
-
-```
-
-
-### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionBillingDate") UpdateSubscriptionBillingDate
-
-> Updates the billing date from a subscription
-
-
-```csharp
-Task<Models.GetSubscriptionResponse> UpdateSubscriptionBillingDate(string subscriptionId, Models.UpdateSubscriptionBillingDateRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| request |  ``` Required ```  | Request for updating the subscription billing date |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-var request = new Models.UpdateSubscriptionBillingDateRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionBillingDate(subscriptionId, request, idempotencyKey);
-
-```
-
-
 ### <a name="delete_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteSubscriptionItem") DeleteSubscriptionItem
 
 > Deletes a subscription item
@@ -1179,6 +623,190 @@ Models.GetSubscriptionItemResponse result = await subscriptions.DeleteSubscripti
 ```
 
 
+### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteUsage") DeleteUsage
+
+> Deletes a usage
+
+
+```csharp
+Task<Models.GetUsageResponse> DeleteUsage(
+        string subscriptionId,
+        string itemId,
+        string usageId,
+        string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| itemId |  ``` Required ```  | The subscription item id |
+| usageId |  ``` Required ```  | The usage id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+string itemId = "item_id";
+string usageId = "usage_id";
+string idempotencyKey = "idempotency-key";
+
+Models.GetUsageResponse result = await subscriptions.DeleteUsage(subscriptionId, itemId, usageId, idempotencyKey);
+
+```
+
+
+### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteDiscount") DeleteDiscount
+
+> Deletes a discount
+
+
+```csharp
+Task<Models.GetDiscountResponse> DeleteDiscount(string subscriptionId, string discountId, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| discountId |  ``` Required ```  | Discount Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+string discountId = "discount_id";
+string idempotencyKey = "idempotency-key";
+
+Models.GetDiscountResponse result = await subscriptions.DeleteDiscount(subscriptionId, discountId, idempotencyKey);
+
+```
+
+
+### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CancelSubscription") CancelSubscription
+
+> Cancels a subscription
+
+
+```csharp
+Task<Models.GetSubscriptionResponse> CancelSubscription(string subscriptionId, Models.CreateCancelSubscriptionRequest request = null, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Optional ```  | Request for cancelling a subscription |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+var request = new Models.CreateCancelSubscriptionRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSubscriptionResponse result = await subscriptions.CancelSubscription(subscriptionId, request, idempotencyKey);
+
+```
+
+
+### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetDiscountById") GetDiscountById
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetDiscountResponse> GetDiscountById(string subscriptionId, string discountId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| discountId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+string discountId = "discountId";
+
+Models.GetDiscountResponse result = await subscriptions.GetDiscountById(subscriptionId, discountId);
+
+```
+
+
+### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetDiscounts") GetDiscounts
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ListDiscountsResponse> GetDiscounts(string subscriptionId, int page, int size)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Required ```  | Page number |
+| size |  ``` Required ```  | Page size |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+int page = 128;
+int size = 128;
+
+Models.ListDiscountsResponse result = await subscriptions.GetDiscounts(subscriptionId, page, size);
+
+```
+
+
+### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateIncrement") CreateIncrement
+
+> Creates a increment
+
+
+```csharp
+Task<Models.GetIncrementResponse> CreateIncrement(string subscriptionId, Models.CreateIncrementRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription id |
+| request |  ``` Required ```  | Request for creating a increment |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+var request = new Models.CreateIncrementRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetIncrementResponse result = await subscriptions.CreateIncrement(subscriptionId, request, idempotencyKey);
+
+```
+
+
 ### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetIncrements") GetIncrements
 
 > TODO: Add a method description
@@ -1201,117 +829,21 @@ Task<Models.ListIncrementsResponse> GetIncrements(string subscriptionId, int? pa
 
 ```csharp
 string subscriptionId = "subscription_id";
-int? page = 113;
-int? size = 113;
+int? page = 128;
+int? size = 128;
 
 Models.ListIncrementsResponse result = await subscriptions.GetIncrements(subscriptionId, page, size);
 
 ```
 
 
-### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionDueDays") UpdateSubscriptionDueDays
+### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteIncrement") DeleteIncrement
 
-> Updates the boleto due days from a subscription
-
-
-```csharp
-Task<Models.GetSubscriptionResponse> UpdateSubscriptionDueDays(string subscriptionId, Models.UpdateSubscriptionDueDaysRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| request |  ``` Required ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-var request = new Models.UpdateSubscriptionDueDaysRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionDueDays(subscriptionId, request, idempotencyKey);
-
-```
-
-
-### <a name="update_subscription_start_at"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionStartAt") UpdateSubscriptionStartAt
-
-> Updates the start at date from a subscription
+> Deletes a increment
 
 
 ```csharp
-Task<Models.GetSubscriptionResponse> UpdateSubscriptionStartAt(string subscriptionId, Models.UpdateSubscriptionStartAtRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | The subscription id |
-| request |  ``` Required ```  | Request for updating the subscription start date |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-var request = new Models.UpdateSubscriptionStartAtRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionStartAt(subscriptionId, request, idempotencyKey);
-
-```
-
-
-### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionItem") UpdateSubscriptionItem
-
-> Updates a subscription item
-
-
-```csharp
-Task<Models.GetSubscriptionItemResponse> UpdateSubscriptionItem(
-        string subscriptionId,
-        string itemId,
-        Models.UpdateSubscriptionItemRequest body,
-        string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-| itemId |  ``` Required ```  | Item id |
-| body |  ``` Required ```  | Request for updating a subscription item |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-string itemId = "item_id";
-var body = new Models.UpdateSubscriptionItemRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSubscriptionItemResponse result = await subscriptions.UpdateSubscriptionItem(subscriptionId, itemId, body, idempotencyKey);
-
-```
-
-
-### <a name="create_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateSubscriptionItem") CreateSubscriptionItem
-
-> Creates a new Subscription item
-
-
-```csharp
-Task<Models.GetSubscriptionItemResponse> CreateSubscriptionItem(string subscriptionId, Models.CreateSubscriptionItemRequest request, string idempotencyKey = null)
+Task<Models.GetIncrementResponse> DeleteIncrement(string subscriptionId, string incrementId, string idempotencyKey = null)
 ```
 
 #### Parameters
@@ -1319,7 +851,7 @@ Task<Models.GetSubscriptionItemResponse> CreateSubscriptionItem(string subscript
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription id |
-| request |  ``` Required ```  | Request for creating a subscription item |
+| incrementId |  ``` Required ```  | Increment id |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -1327,36 +859,10 @@ Task<Models.GetSubscriptionItemResponse> CreateSubscriptionItem(string subscript
 
 ```csharp
 string subscriptionId = "subscription_id";
-var request = new Models.CreateSubscriptionItemRequest();
+string incrementId = "increment_id";
 string idempotencyKey = "idempotency-key";
 
-Models.GetSubscriptionItemResponse result = await subscriptions.CreateSubscriptionItem(subscriptionId, request, idempotencyKey);
-
-```
-
-
-### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscription") GetSubscription
-
-> Gets a subscription
-
-
-```csharp
-Task<Models.GetSubscriptionResponse> GetSubscription(string subscriptionId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription id |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-
-Models.GetSubscriptionResponse result = await subscriptions.GetSubscription(subscriptionId);
+Models.GetIncrementResponse result = await subscriptions.DeleteIncrement(subscriptionId, incrementId, idempotencyKey);
 
 ```
 
@@ -1397,14 +903,155 @@ Task<Models.ListUsagesResponse> GetUsages(
 ```csharp
 string subscriptionId = "subscription_id";
 string itemId = "item_id";
-int? page = 113;
-int? size = 113;
+int? page = 128;
+int? size = 128;
 string code = "code";
 string mgroup = "group";
 DateTime? usedSince = DateTime.Now();
 DateTime? usedUntil = DateTime.Now();
 
 Models.ListUsagesResponse result = await subscriptions.GetUsages(subscriptionId, itemId, page, size, code, mgroup, usedSince, usedUntil);
+
+```
+
+
+### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscriptionItems") GetSubscriptionItems
+
+> Get Subscription Items
+
+
+```csharp
+Task<Models.ListSubscriptionItemsResponse> GetSubscriptionItems(
+        string subscriptionId,
+        int? page = null,
+        int? size = null,
+        string name = null,
+        string code = null,
+        string status = null,
+        string description = null,
+        string createdSince = null,
+        string createdUntil = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| name |  ``` Optional ```  | The item name |
+| code |  ``` Optional ```  | Identification code in the client system |
+| status |  ``` Optional ```  | The item statis |
+| description |  ``` Optional ```  | The item description |
+| createdSince |  ``` Optional ```  | Filter for item's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for item's creation date end range |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+int? page = 128;
+int? size = 128;
+string name = "name";
+string code = "code";
+string status = "status";
+string description = "description";
+string createdSince = "created_since";
+string createdUntil = "created_until";
+
+Models.ListSubscriptionItemsResponse result = await subscriptions.GetSubscriptionItems(subscriptionId, page, size, name, code, status, description, createdSince, createdUntil);
+
+```
+
+
+### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionDueDays") UpdateSubscriptionDueDays
+
+> Updates the boleto due days from a subscription
+
+
+```csharp
+Task<Models.GetSubscriptionResponse> UpdateSubscriptionDueDays(string subscriptionId, Models.UpdateSubscriptionDueDaysRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| request |  ``` Required ```  | TODO: Add a parameter description |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+var request = new Models.UpdateSubscriptionDueDaysRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionDueDays(subscriptionId, request, idempotencyKey);
+
+```
+
+
+### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionMiniumPrice") UpdateSubscriptionMiniumPrice
+
+> Atualização do valor mínimo da assinatura
+
+
+```csharp
+Task<Models.GetSubscriptionResponse> UpdateSubscriptionMiniumPrice(string subscriptionId, Models.UpdateSubscriptionMinimumPriceRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| request |  ``` Required ```  | Request da requisição com o valor mínimo que será configurado |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+var request = new Models.UpdateSubscriptionMinimumPriceRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey);
+
+```
+
+
+### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionBillingDate") UpdateSubscriptionBillingDate
+
+> Updates the billing date from a subscription
+
+
+```csharp
+Task<Models.GetSubscriptionResponse> UpdateSubscriptionBillingDate(string subscriptionId, Models.UpdateSubscriptionBillingDateRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | The subscription id |
+| request |  ``` Required ```  | Request for updating the subscription billing date |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+var request = new Models.UpdateSubscriptionBillingDateRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionBillingDate(subscriptionId, request, idempotencyKey);
 
 ```
 
@@ -1439,13 +1086,13 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateLatestPeriodEn
 ```
 
 
-### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionMiniumPrice") UpdateSubscriptionMiniumPrice
+### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateCurrentCycleStatus") UpdateCurrentCycleStatus
 
-> Atualização do valor mínimo da assinatura
+> TODO: Add a method description
 
 
 ```csharp
-Task<Models.GetSubscriptionResponse> UpdateSubscriptionMiniumPrice(string subscriptionId, Models.UpdateSubscriptionMinimumPriceRequest request, string idempotencyKey = null)
+Task UpdateCurrentCycleStatus(string subscriptionId, Models.UpdateCurrentCycleStatusRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
@@ -1453,7 +1100,7 @@ Task<Models.GetSubscriptionResponse> UpdateSubscriptionMiniumPrice(string subscr
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | subscriptionId |  ``` Required ```  | Subscription Id |
-| request |  ``` Required ```  | Request da requisição com o valor mínimo que será configurado |
+| request |  ``` Required ```  | Request for updating the end date of the subscription current status |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -1461,10 +1108,40 @@ Task<Models.GetSubscriptionResponse> UpdateSubscriptionMiniumPrice(string subscr
 
 ```csharp
 string subscriptionId = "subscription_id";
-var request = new Models.UpdateSubscriptionMinimumPriceRequest();
+var request = new Models.UpdateCurrentCycleStatusRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionMiniumPrice(subscriptionId, request, idempotencyKey);
+await subscriptions.UpdateCurrentCycleStatus(subscriptionId, request, idempotencyKey);
+
+```
+
+
+### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscriptionCycles") GetSubscriptionCycles
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.ListCyclesResponse> GetSubscriptionCycles(string subscriptionId, string page, string size)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| subscriptionId |  ``` Required ```  | Subscription Id |
+| page |  ``` Required ```  | Page number |
+| size |  ``` Required ```  | Page size |
+
+
+#### Example Usage
+
+```csharp
+string subscriptionId = "subscription_id";
+string page = "page";
+string size = "size";
+
+Models.ListCyclesResponse result = await subscriptions.GetSubscriptionCycles(subscriptionId, page, size);
 
 ```
 
@@ -1565,6 +1242,60 @@ The singleton instance of the ``` OrdersController ``` class can be accessed fro
 IOrdersController orders = client.Orders;
 ```
 
+### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.GetOrder") GetOrder
+
+> Gets an order
+
+
+```csharp
+Task<Models.GetOrderResponse> GetOrder(string orderId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | Order id |
+
+
+#### Example Usage
+
+```csharp
+string orderId = "order_id";
+
+Models.GetOrderResponse result = await orders.GetOrder(orderId);
+
+```
+
+
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.CreateOrder") CreateOrder
+
+> Creates a new Order
+
+
+```csharp
+Task<Models.GetOrderResponse> CreateOrder(Models.CreateOrderRequest body, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Request for creating an order |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CreateOrderRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetOrderResponse result = await orders.CreateOrder(body, idempotencyKey);
+
+```
+
+
 ### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.GetOrders") GetOrders
 
 > Gets all orders
@@ -1597,8 +1328,8 @@ Task<Models.ListOrderResponse> GetOrders(
 #### Example Usage
 
 ```csharp
-int? page = 113;
-int? size = 113;
+int? page = 87;
+int? size = 87;
 string code = "code";
 string status = "status";
 DateTime? createdSince = DateTime.Now();
@@ -1606,6 +1337,36 @@ DateTime? createdUntil = DateTime.Now();
 string customerId = "customer_id";
 
 Models.ListOrderResponse result = await orders.GetOrders(page, size, code, status, createdSince, createdUntil, customerId);
+
+```
+
+
+### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.UpdateOrderMetadata") UpdateOrderMetadata
+
+> Updates the metadata from an order
+
+
+```csharp
+Task<Models.GetOrderResponse> UpdateOrderMetadata(string orderId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| orderId |  ``` Required ```  | The order id |
+| request |  ``` Required ```  | Request for updating the order metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string orderId = "order_id";
+var request = new Models.UpdateMetadataRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetOrderResponse result = await orders.UpdateOrderMetadata(orderId, request, idempotencyKey);
 
 ```
 
@@ -1704,64 +1465,6 @@ Models.GetOrderItemResponse result = await orders.DeleteOrderItem(orderId, itemI
 ```
 
 
-### <a name="close_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.CloseOrder") CloseOrder
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetOrderResponse> CloseOrder(string id, Models.UpdateOrderStatusRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Order Id |
-| request |  ``` Required ```  | Update Order Model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string id = "id";
-var request = new Models.UpdateOrderStatusRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetOrderResponse result = await orders.CloseOrder(id, request, idempotencyKey);
-
-```
-
-
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.CreateOrder") CreateOrder
-
-> Creates a new Order
-
-
-```csharp
-Task<Models.GetOrderResponse> CreateOrder(Models.CreateOrderRequest body, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | Request for creating an order |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var body = new Models.CreateOrderRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetOrderResponse result = await orders.CreateOrder(body, idempotencyKey);
-
-```
-
-
 ### <a name="create_order_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.CreateOrderItem") CreateOrderItem
 
 > TODO: Add a method description
@@ -1820,58 +1523,355 @@ Models.GetOrderItemResponse result = await orders.GetOrderItem(orderId, itemId);
 ```
 
 
-### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.UpdateOrderMetadata") UpdateOrderMetadata
+### <a name="close_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.CloseOrder") CloseOrder
 
-> Updates the metadata from an order
+> TODO: Add a method description
 
 
 ```csharp
-Task<Models.GetOrderResponse> UpdateOrderMetadata(string orderId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
+Task<Models.GetOrderResponse> CloseOrder(string id, Models.UpdateOrderStatusRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | The order id |
-| request |  ``` Required ```  | Request for updating the order metadata |
+| id |  ``` Required ```  | Order Id |
+| request |  ``` Required ```  | Update Order Model |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-string orderId = "order_id";
-var request = new Models.UpdateMetadataRequest();
+string id = "id";
+var request = new Models.UpdateOrderStatusRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetOrderResponse result = await orders.UpdateOrderMetadata(orderId, request, idempotencyKey);
+Models.GetOrderResponse result = await orders.CloseOrder(id, request, idempotencyKey);
 
 ```
 
 
-### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.GetOrder") GetOrder
+[Back to List of Controllers](#list_of_controllers)
 
-> Gets an order
+## <a name="plans_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.PlansController") PlansController
+
+### Get singleton instance
+
+The singleton instance of the ``` PlansController ``` class can be accessed from the API Client.
+
+```csharp
+IPlansController plans = client.Plans;
+```
+
+### <a name="create_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.CreatePlanItem") CreatePlanItem
+
+> Adds a new item to a plan
 
 
 ```csharp
-Task<Models.GetOrderResponse> GetOrder(string orderId)
+Task<Models.GetPlanItemResponse> CreatePlanItem(string planId, Models.CreatePlanItemRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| orderId |  ``` Required ```  | Order id |
+| planId |  ``` Required ```  | Plan id |
+| request |  ``` Required ```  | Request for creating a plan item |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-string orderId = "order_id";
+string planId = "plan_id";
+var request = new Models.CreatePlanItemRequest();
+string idempotencyKey = "idempotency-key";
 
-Models.GetOrderResponse result = await orders.GetOrder(orderId);
+Models.GetPlanItemResponse result = await plans.CreatePlanItem(planId, request, idempotencyKey);
+
+```
+
+
+### <a name="update_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.UpdatePlanItem") UpdatePlanItem
+
+> Updates a plan item
+
+
+```csharp
+Task<Models.GetPlanItemResponse> UpdatePlanItem(
+        string planId,
+        string planItemId,
+        Models.UpdatePlanItemRequest body,
+        string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| planItemId |  ``` Required ```  | Plan item id |
+| body |  ``` Required ```  | Request for updating the plan item |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string planId = "plan_id";
+string planItemId = "plan_item_id";
+var body = new Models.UpdatePlanItemRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetPlanItemResponse result = await plans.UpdatePlanItem(planId, planItemId, body, idempotencyKey);
+
+```
+
+
+### <a name="get_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.GetPlan") GetPlan
+
+> Gets a plan
+
+
+```csharp
+Task<Models.GetPlanResponse> GetPlan(string planId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+
+
+#### Example Usage
+
+```csharp
+string planId = "plan_id";
+
+Models.GetPlanResponse result = await plans.GetPlan(planId);
+
+```
+
+
+### <a name="delete_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.DeletePlan") DeletePlan
+
+> Deletes a plan
+
+
+```csharp
+Task<Models.GetPlanResponse> DeletePlan(string planId, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string planId = "plan_id";
+string idempotencyKey = "idempotency-key";
+
+Models.GetPlanResponse result = await plans.DeletePlan(planId, idempotencyKey);
+
+```
+
+
+### <a name="update_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.UpdatePlan") UpdatePlan
+
+> Updates a plan
+
+
+```csharp
+Task<Models.GetPlanResponse> UpdatePlan(string planId, Models.UpdatePlanRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| request |  ``` Required ```  | Request for updating a plan |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string planId = "plan_id";
+var request = new Models.UpdatePlanRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetPlanResponse result = await plans.UpdatePlan(planId, request, idempotencyKey);
+
+```
+
+
+### <a name="create_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.CreatePlan") CreatePlan
+
+> Creates a new plan
+
+
+```csharp
+Task<Models.GetPlanResponse> CreatePlan(Models.CreatePlanRequest body, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | Request for creating a plan |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var body = new Models.CreatePlanRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetPlanResponse result = await plans.CreatePlan(body, idempotencyKey);
+
+```
+
+
+### <a name="get_plans"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.GetPlans") GetPlans
+
+> Gets all plans
+
+
+```csharp
+Task<Models.ListPlansResponse> GetPlans(
+        int? page = null,
+        int? size = null,
+        string name = null,
+        string status = null,
+        string billingType = null,
+        DateTime? createdSince = null,
+        DateTime? createdUntil = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| name |  ``` Optional ```  | Filter for Plan's name |
+| status |  ``` Optional ```  | Filter for Plan's status |
+| billingType |  ``` Optional ```  | Filter for plan's billing type |
+| createdSince |  ``` Optional ```  | Filter for plan's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for plan's creation date end range |
+
+
+#### Example Usage
+
+```csharp
+int? page = 87;
+int? size = 87;
+string name = "name";
+string status = "status";
+string billingType = "billing_type";
+DateTime? createdSince = DateTime.Now();
+DateTime? createdUntil = DateTime.Now();
+
+Models.ListPlansResponse result = await plans.GetPlans(page, size, name, status, billingType, createdSince, createdUntil);
+
+```
+
+
+### <a name="update_plan_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.UpdatePlanMetadata") UpdatePlanMetadata
+
+> Updates the metadata from a plan
+
+
+```csharp
+Task<Models.GetPlanResponse> UpdatePlanMetadata(string planId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | The plan id |
+| request |  ``` Required ```  | Request for updating the plan metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string planId = "plan_id";
+var request = new Models.UpdateMetadataRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetPlanResponse result = await plans.UpdatePlanMetadata(planId, request, idempotencyKey);
+
+```
+
+
+### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.GetPlanItem") GetPlanItem
+
+> Gets a plan item
+
+
+```csharp
+Task<Models.GetPlanItemResponse> GetPlanItem(string planId, string planItemId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| planItemId |  ``` Required ```  | Plan item id |
+
+
+#### Example Usage
+
+```csharp
+string planId = "plan_id";
+string planItemId = "plan_item_id";
+
+Models.GetPlanItemResponse result = await plans.GetPlanItem(planId, planItemId);
+
+```
+
+
+### <a name="delete_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.DeletePlanItem") DeletePlanItem
+
+> Removes an item from a plan
+
+
+```csharp
+Task<Models.GetPlanItemResponse> DeletePlanItem(string planId, string planItemId, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| planId |  ``` Required ```  | Plan id |
+| planItemId |  ``` Required ```  | Plan item id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string planId = "plan_id";
+string planItemId = "plan_item_id";
+string idempotencyKey = "idempotency-key";
+
+Models.GetPlanItemResponse result = await plans.DeletePlanItem(planId, planItemId, idempotencyKey);
 
 ```
 
@@ -1887,32 +1887,6 @@ The singleton instance of the ``` InvoicesController ``` class can be accessed f
 ```csharp
 IInvoicesController invoices = client.Invoices;
 ```
-
-### <a name="get_partial_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.GetPartialInvoice") GetPartialInvoice
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetInvoiceResponse> GetPartialInvoice(string subscriptionId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| subscriptionId |  ``` Required ```  | Subscription Id |
-
-
-#### Example Usage
-
-```csharp
-string subscriptionId = "subscription_id";
-
-Models.GetInvoiceResponse result = await invoices.GetPartialInvoice(subscriptionId);
-
-```
-
 
 ### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.CancelInvoice") CancelInvoice
 
@@ -1938,6 +1912,32 @@ string invoiceId = "invoice_id";
 string idempotencyKey = "idempotency-key";
 
 Models.GetInvoiceResponse result = await invoices.CancelInvoice(invoiceId, idempotencyKey);
+
+```
+
+
+### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.GetInvoice") GetInvoice
+
+> Gets an invoice
+
+
+```csharp
+Task<Models.GetInvoiceResponse> GetInvoice(string invoiceId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice Id |
+
+
+#### Example Usage
+
+```csharp
+string invoiceId = "invoice_id";
+
+Models.GetInvoiceResponse result = await invoices.GetInvoice(invoiceId);
 
 ```
 
@@ -1978,6 +1978,93 @@ Models.GetInvoiceResponse result = await invoices.CreateInvoice(subscriptionId, 
 ```
 
 
+### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.UpdateInvoiceStatus") UpdateInvoiceStatus
+
+> Updates the status from an invoice
+
+
+```csharp
+Task<Models.GetInvoiceResponse> UpdateInvoiceStatus(string invoiceId, Models.UpdateInvoiceStatusRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| invoiceId |  ``` Required ```  | Invoice Id |
+| request |  ``` Required ```  | Request for updating an invoice's status |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string invoiceId = "invoice_id";
+var request = new Models.UpdateInvoiceStatusRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetInvoiceResponse result = await invoices.UpdateInvoiceStatus(invoiceId, request, idempotencyKey);
+
+```
+
+
+### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.GetInvoices") GetInvoices
+
+> Gets all invoices
+
+
+```csharp
+Task<Models.ListInvoicesResponse> GetInvoices(
+        int? page = null,
+        int? size = null,
+        string code = null,
+        string customerId = null,
+        string subscriptionId = null,
+        DateTime? createdSince = null,
+        DateTime? createdUntil = null,
+        string status = null,
+        DateTime? dueSince = null,
+        DateTime? dueUntil = null,
+        string customerDocument = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+| code |  ``` Optional ```  | Filter for Invoice's code |
+| customerId |  ``` Optional ```  | Filter for Invoice's customer id |
+| subscriptionId |  ``` Optional ```  | Filter for Invoice's subscription id |
+| createdSince |  ``` Optional ```  | Filter for Invoice's creation date start range |
+| createdUntil |  ``` Optional ```  | Filter for Invoices creation date end range |
+| status |  ``` Optional ```  | Filter for Invoice's status |
+| dueSince |  ``` Optional ```  | Filter for Invoice's due date start range |
+| dueUntil |  ``` Optional ```  | Filter for Invoice's due date end range |
+| customerDocument |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+int? page = 87;
+int? size = 87;
+string code = "code";
+string customerId = "customer_id";
+string subscriptionId = "subscription_id";
+DateTime? createdSince = DateTime.Now();
+DateTime? createdUntil = DateTime.Now();
+string status = "status";
+DateTime? dueSince = DateTime.Now();
+DateTime? dueUntil = DateTime.Now();
+string customerDocument = "customer_document";
+
+Models.ListInvoicesResponse result = await invoices.GetInvoices(page, size, code, customerId, subscriptionId, createdSince, createdUntil, status, dueSince, dueUntil, customerDocument);
+
+```
+
+
 ### <a name="update_invoice_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.UpdateInvoiceMetadata") UpdateInvoiceMetadata
 
 > Updates the metadata from an invoice
@@ -2008,118 +2095,28 @@ Models.GetInvoiceResponse result = await invoices.UpdateInvoiceMetadata(invoiceI
 ```
 
 
-### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.GetInvoices") GetInvoices
+### <a name="get_partial_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.GetPartialInvoice") GetPartialInvoice
 
-> Gets all invoices
+> TODO: Add a method description
 
 
 ```csharp
-Task<Models.ListInvoicesResponse> GetInvoices(
-        int? page = null,
-        int? size = null,
-        string code = null,
-        string customerId = null,
-        string subscriptionId = null,
-        DateTime? createdSince = null,
-        DateTime? createdUntil = null,
-        string status = null,
-        DateTime? dueSince = null,
-        DateTime? dueUntil = null,
-        string document = null,
-        string customerDocument = null)
+Task<Models.GetInvoiceResponse> GetPartialInvoice(string subscriptionId)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-| code |  ``` Optional ```  | Filter for Invoice's code |
-| customerId |  ``` Optional ```  | Filter for Invoice's customer id |
-| subscriptionId |  ``` Optional ```  | Filter for Invoice's subscription id |
-| createdSince |  ``` Optional ```  | Filter for Invoice's creation date start range |
-| createdUntil |  ``` Optional ```  | Filter for Invoices creation date end range |
-| status |  ``` Optional ```  | Filter for Invoice's status |
-| dueSince |  ``` Optional ```  | Filter for Invoice's due date start range |
-| dueUntil |  ``` Optional ```  | Filter for Invoice's due date end range |
-| document |  ``` Optional ```  | TODO: Add a parameter description |
-| customerDocument |  ``` Optional ```  | TODO: Add a parameter description |
+| subscriptionId |  ``` Required ```  | Subscription Id |
 
 
 #### Example Usage
 
 ```csharp
-int? page = 204;
-int? size = 204;
-string code = "code";
-string customerId = "customer_id";
 string subscriptionId = "subscription_id";
-DateTime? createdSince = DateTime.Now();
-DateTime? createdUntil = DateTime.Now();
-string status = "status";
-DateTime? dueSince = DateTime.Now();
-DateTime? dueUntil = DateTime.Now();
-string document = "document";
-string customerDocument = "customer_document";
 
-Models.ListInvoicesResponse result = await invoices.GetInvoices(page, size, code, customerId, subscriptionId, createdSince, createdUntil, status, dueSince, dueUntil, document, customerDocument);
-
-```
-
-
-### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.GetInvoice") GetInvoice
-
-> Gets an invoice
-
-
-```csharp
-Task<Models.GetInvoiceResponse> GetInvoice(string invoiceId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice Id |
-
-
-#### Example Usage
-
-```csharp
-string invoiceId = "invoice_id";
-
-Models.GetInvoiceResponse result = await invoices.GetInvoice(invoiceId);
-
-```
-
-
-### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.UpdateInvoiceStatus") UpdateInvoiceStatus
-
-> Updates the status from an invoice
-
-
-```csharp
-Task<Models.GetInvoiceResponse> UpdateInvoiceStatus(string invoiceId, Models.UpdateInvoiceStatusRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| invoiceId |  ``` Required ```  | Invoice Id |
-| request |  ``` Required ```  | Request for updating an invoice's status |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string invoiceId = "invoice_id";
-var request = new Models.UpdateInvoiceStatusRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetInvoiceResponse result = await invoices.UpdateInvoiceStatus(invoiceId, request, idempotencyKey);
+Models.GetInvoiceResponse result = await invoices.GetPartialInvoice(subscriptionId);
 
 ```
 
@@ -2208,13 +2205,155 @@ Models.GetAddressResponse result = await customers.UpdateAddress(customerId, add
 ```
 
 
-### <a name="delete_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteAccessToken") DeleteAccessToken
+### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCustomer") GetCustomer
 
-> Delete a customer's access token
+> Get a customer
 
 
 ```csharp
-Task<Models.GetAccessTokenResponse> DeleteAccessToken(string customerId, string tokenId, string idempotencyKey = null)
+Task<Models.GetCustomerResponse> GetCustomer(string customerId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+
+Models.GetCustomerResponse result = await customers.GetCustomer(customerId);
+
+```
+
+
+### <a name="get_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAccessTokens") GetAccessTokens
+
+> Get all access tokens from a customer
+
+
+```csharp
+Task<Models.ListAccessTokensResponse> GetAccessTokens(string customerId, int? page = null, int? size = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+int? page = 87;
+int? size = 87;
+
+Models.ListAccessTokensResponse result = await customers.GetAccessTokens(customerId, page, size);
+
+```
+
+
+### <a name="get_addresses"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAddresses") GetAddresses
+
+> Gets all adressess from a customer
+
+
+```csharp
+Task<Models.ListAddressesResponse> GetAddresses(string customerId, int? page = null, int? size = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+int? page = 87;
+int? size = 87;
+
+Models.ListAddressesResponse result = await customers.GetAddresses(customerId, page, size);
+
+```
+
+
+### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCards") GetCards
+
+> Get all cards from a customer
+
+
+```csharp
+Task<Models.ListCardsResponse> GetCards(string customerId, int? page = null, int? size = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+int? page = 87;
+int? size = 87;
+
+Models.ListCardsResponse result = await customers.GetCards(customerId, page, size);
+
+```
+
+
+### <a name="delete_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteAccessTokens") DeleteAccessTokens
+
+> Delete a Customer's access tokens
+
+
+```csharp
+Task<Models.ListAccessTokensResponse> DeleteAccessTokens(string customerId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+
+Models.ListAccessTokensResponse result = await customers.DeleteAccessTokens(customerId);
+
+```
+
+
+### <a name="get_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAccessToken") GetAccessToken
+
+> Get a Customer's access token
+
+
+```csharp
+Task<Models.GetAccessTokenResponse> GetAccessToken(string customerId, string tokenId)
 ```
 
 #### Parameters
@@ -2223,7 +2362,6 @@ Task<Models.GetAccessTokenResponse> DeleteAccessToken(string customerId, string 
 |-----------|------|-------------|
 | customerId |  ``` Required ```  | Customer Id |
 | tokenId |  ``` Required ```  | Token Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
@@ -2231,9 +2369,8 @@ Task<Models.GetAccessTokenResponse> DeleteAccessToken(string customerId, string 
 ```csharp
 string customerId = "customer_id";
 string tokenId = "token_id";
-string idempotencyKey = "idempotency-key";
 
-Models.GetAccessTokenResponse result = await customers.DeleteAccessToken(customerId, tokenId, idempotencyKey);
+Models.GetAccessTokenResponse result = await customers.GetAccessToken(customerId, tokenId);
 
 ```
 
@@ -2268,13 +2405,13 @@ Models.GetAccessTokenResponse result = await customers.CreateAccessToken(custome
 ```
 
 
-### <a name="create_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.CreateAddress") CreateAddress
+### <a name="delete_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteAccessToken") DeleteAccessToken
 
-> Creates a new address for a customer
+> Delete a customer's access token
 
 
 ```csharp
-Task<Models.GetAddressResponse> CreateAddress(string customerId, Models.CreateAddressRequest request, string idempotencyKey = null)
+Task<Models.GetAccessTokenResponse> DeleteAccessToken(string customerId, string tokenId, string idempotencyKey = null)
 ```
 
 #### Parameters
@@ -2282,7 +2419,7 @@ Task<Models.GetAddressResponse> CreateAddress(string customerId, Models.CreateAd
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | customerId |  ``` Required ```  | Customer Id |
-| request |  ``` Required ```  | Request for creating an address |
+| tokenId |  ``` Required ```  | Token Id |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -2290,64 +2427,70 @@ Task<Models.GetAddressResponse> CreateAddress(string customerId, Models.CreateAd
 
 ```csharp
 string customerId = "customer_id";
-var request = new Models.CreateAddressRequest();
+string tokenId = "token_id";
 string idempotencyKey = "idempotency-key";
 
-Models.GetAddressResponse result = await customers.CreateAddress(customerId, request, idempotencyKey);
+Models.GetAccessTokenResponse result = await customers.DeleteAccessToken(customerId, tokenId, idempotencyKey);
 
 ```
 
 
-### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.CreateCustomer") CreateCustomer
+### <a name="update_customer_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.UpdateCustomerMetadata") UpdateCustomerMetadata
 
-> Creates a new customer
+> Updates the metadata a customer
 
 
 ```csharp
-Task<Models.GetCustomerResponse> CreateCustomer(Models.CreateCustomerRequest request, string idempotencyKey = null)
+Task<Models.GetCustomerResponse> UpdateCustomerMetadata(string customerId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| request |  ``` Required ```  | Request for creating a customer |
+| customerId |  ``` Required ```  | The customer id |
+| request |  ``` Required ```  | Request for updating the customer metadata |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var request = new Models.CreateCustomerRequest();
+string customerId = "customer_id";
+var request = new Models.UpdateMetadataRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetCustomerResponse result = await customers.CreateCustomer(request, idempotencyKey);
+Models.GetCustomerResponse result = await customers.UpdateCustomerMetadata(customerId, request, idempotencyKey);
 
 ```
 
 
-### <a name="delete_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteAccessTokens") DeleteAccessTokens
+### <a name="update_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.UpdateCustomer") UpdateCustomer
 
-> Delete a Customer's access tokens
+> Updates a customer
 
 
 ```csharp
-Task<Models.ListAccessTokensResponse> DeleteAccessTokens(string customerId)
+Task<Models.GetCustomerResponse> UpdateCustomer(string customerId, Models.UpdateCustomerRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
+| customerId |  ``` Required ```  | Customer id |
+| request |  ``` Required ```  | Request for updating a customer |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
 string customerId = "customer_id";
+var request = new Models.UpdateCustomerRequest();
+string idempotencyKey = "idempotency-key";
 
-Models.ListAccessTokensResponse result = await customers.DeleteAccessTokens(customerId);
+Models.GetCustomerResponse result = await customers.UpdateCustomer(customerId, request, idempotencyKey);
 
 ```
 
@@ -2406,6 +2549,94 @@ string addressId = "address_id";
 string idempotencyKey = "idempotency-key";
 
 Models.GetAddressResponse result = await customers.DeleteAddress(customerId, addressId, idempotencyKey);
+
+```
+
+
+### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteCard") DeleteCard
+
+> Delete a customer's card
+
+
+```csharp
+Task<Models.GetCardResponse> DeleteCard(string customerId, string cardId, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| cardId |  ``` Required ```  | Card Id |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+string cardId = "card_id";
+string idempotencyKey = "idempotency-key";
+
+Models.GetCardResponse result = await customers.DeleteCard(customerId, cardId, idempotencyKey);
+
+```
+
+
+### <a name="create_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.CreateAddress") CreateAddress
+
+> Creates a new address for a customer
+
+
+```csharp
+Task<Models.GetAddressResponse> CreateAddress(string customerId, Models.CreateAddressRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer Id |
+| request |  ``` Required ```  | Request for creating an address |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+var request = new Models.CreateAddressRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetAddressResponse result = await customers.CreateAddress(customerId, request, idempotencyKey);
+
+```
+
+
+### <a name="get_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCard") GetCard
+
+> Get a customer's card
+
+
+```csharp
+Task<Models.GetCardResponse> GetCard(string customerId, string cardId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| customerId |  ``` Required ```  | Customer id |
+| cardId |  ``` Required ```  | Card id |
+
+
+#### Example Usage
+
+```csharp
+string customerId = "customer_id";
+string cardId = "card_id";
+
+Models.GetCardResponse result = await customers.GetCard(customerId, cardId);
 
 ```
 
@@ -2482,96 +2713,6 @@ Models.ListCustomersResponse result = await customers.GetCustomers(name, documen
 ```
 
 
-### <a name="update_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.UpdateCustomer") UpdateCustomer
-
-> Updates a customer
-
-
-```csharp
-Task<Models.GetCustomerResponse> UpdateCustomer(string customerId, Models.UpdateCustomerRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| request |  ``` Required ```  | Request for updating a customer |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-var request = new Models.UpdateCustomerRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetCustomerResponse result = await customers.UpdateCustomer(customerId, request, idempotencyKey);
-
-```
-
-
-### <a name="get_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAccessTokens") GetAccessTokens
-
-> Get all access tokens from a customer
-
-
-```csharp
-Task<Models.ListAccessTokensResponse> GetAccessTokens(string customerId, int? page = null, int? size = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-int? page = 204;
-int? size = 204;
-
-Models.ListAccessTokensResponse result = await customers.GetAccessTokens(customerId, page, size);
-
-```
-
-
-### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCards") GetCards
-
-> Get all cards from a customer
-
-
-```csharp
-Task<Models.ListCardsResponse> GetCards(string customerId, int? page = null, int? size = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-int? page = 204;
-int? size = 204;
-
-Models.ListCardsResponse result = await customers.GetCards(customerId, page, size);
-
-```
-
-
 ### <a name="renew_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.RenewCard") RenewCard
 
 > Renew a card
@@ -2602,174 +2743,30 @@ Models.GetCardResponse result = await customers.RenewCard(customerId, cardId, id
 ```
 
 
-### <a name="get_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAccessToken") GetAccessToken
+### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.CreateCustomer") CreateCustomer
 
-> Get a Customer's access token
+> Creates a new customer
 
 
 ```csharp
-Task<Models.GetAccessTokenResponse> GetAccessToken(string customerId, string tokenId)
+Task<Models.GetCustomerResponse> CreateCustomer(Models.CreateCustomerRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| tokenId |  ``` Required ```  | Token Id |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-string tokenId = "token_id";
-
-Models.GetAccessTokenResponse result = await customers.GetAccessToken(customerId, tokenId);
-
-```
-
-
-### <a name="update_customer_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.UpdateCustomerMetadata") UpdateCustomerMetadata
-
-> Updates the metadata a customer
-
-
-```csharp
-Task<Models.GetCustomerResponse> UpdateCustomerMetadata(string customerId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | The customer id |
-| request |  ``` Required ```  | Request for updating the customer metadata |
+| request |  ``` Required ```  | Request for creating a customer |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-string customerId = "customer_id";
-var request = new Models.UpdateMetadataRequest();
+var request = new Models.CreateCustomerRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetCustomerResponse result = await customers.UpdateCustomerMetadata(customerId, request, idempotencyKey);
-
-```
-
-
-### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteCard") DeleteCard
-
-> Delete a customer's card
-
-
-```csharp
-Task<Models.GetCardResponse> DeleteCard(string customerId, string cardId, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-| cardId |  ``` Required ```  | Card Id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-string cardId = "card_id";
-string idempotencyKey = "idempotency-key";
-
-Models.GetCardResponse result = await customers.DeleteCard(customerId, cardId, idempotencyKey);
-
-```
-
-
-### <a name="get_addresses"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAddresses") GetAddresses
-
-> Gets all adressess from a customer
-
-
-```csharp
-Task<Models.ListAddressesResponse> GetAddresses(string customerId, int? page = null, int? size = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-int? page = 204;
-int? size = 204;
-
-Models.ListAddressesResponse result = await customers.GetAddresses(customerId, page, size);
-
-```
-
-
-### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCustomer") GetCustomer
-
-> Get a customer
-
-
-```csharp
-Task<Models.GetCustomerResponse> GetCustomer(string customerId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer Id |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-
-Models.GetCustomerResponse result = await customers.GetCustomer(customerId);
-
-```
-
-
-### <a name="get_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCard") GetCard
-
-> Get a customer's card
-
-
-```csharp
-Task<Models.GetCardResponse> GetCard(string customerId, string cardId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| customerId |  ``` Required ```  | Customer id |
-| cardId |  ``` Required ```  | Card id |
-
-
-#### Example Usage
-
-```csharp
-string customerId = "customer_id";
-string cardId = "card_id";
-
-Models.GetCardResponse result = await customers.GetCard(customerId, cardId);
+Models.GetCustomerResponse result = await customers.CreateCustomer(request, idempotencyKey);
 
 ```
 
@@ -2786,43 +2783,13 @@ The singleton instance of the ``` ChargesController ``` class can be accessed fr
 IChargesController charges = client.Charges;
 ```
 
-### <a name="update_charge_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargeMetadata") UpdateChargeMetadata
+### <a name="update_charge_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargeCard") UpdateChargeCard
 
-> Updates the metadata from a charge
-
-
-```csharp
-Task<Models.GetChargeResponse> UpdateChargeMetadata(string chargeId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | The charge id |
-| request |  ``` Required ```  | Request for updating the charge metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string chargeId = "charge_id";
-var request = new Models.UpdateMetadataRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetChargeResponse result = await charges.UpdateChargeMetadata(chargeId, request, idempotencyKey);
-
-```
-
-
-### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.CaptureCharge") CaptureCharge
-
-> Captures a charge
+> Updates the card from a charge
 
 
 ```csharp
-Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest request = null, string idempotencyKey = null)
+Task<Models.GetChargeResponse> UpdateChargeCard(string chargeId, Models.UpdateChargeCardRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
@@ -2830,7 +2797,7 @@ Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptu
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | chargeId |  ``` Required ```  | Charge id |
-| request |  ``` Optional ```  | Request for capturing a charge |
+| request |  ``` Required ```  | Request for updating a charge's card |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -2838,10 +2805,10 @@ Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptu
 
 ```csharp
 string chargeId = "charge_id";
-var request = new Models.CreateCaptureChargeRequest();
+var request = new Models.UpdateChargeCardRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetChargeResponse result = await charges.CaptureCharge(chargeId, request, idempotencyKey);
+Models.GetChargeResponse result = await charges.UpdateChargeCard(chargeId, request, idempotencyKey);
 
 ```
 
@@ -2876,51 +2843,74 @@ Models.GetChargeResponse result = await charges.UpdateChargePaymentMethod(charge
 ```
 
 
-### <a name="get_charge_transactions"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetChargeTransactions") GetChargeTransactions
+### <a name="create_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.CreateCharge") CreateCharge
 
-> TODO: Add a method description
+> Creates a new charge
 
 
 ```csharp
-Task<Models.ListChargeTransactionsResponse> GetChargeTransactions(string chargeId, int? page = null, int? size = null)
+Task<Models.GetChargeResponse> CreateCharge(Models.CreateChargeRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge Id |
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
+| request |  ``` Required ```  | Request for creating a charge |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var request = new Models.CreateChargeRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetChargeResponse result = await charges.CreateCharge(request, idempotencyKey);
+
+```
+
+
+### <a name="get_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetCharge") GetCharge
+
+> Get a charge from its id
+
+
+```csharp
+Task<Models.GetChargeResponse> GetCharge(string chargeId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge id |
 
 
 #### Example Usage
 
 ```csharp
 string chargeId = "charge_id";
-int? page = 204;
-int? size = 204;
 
-Models.ListChargeTransactionsResponse result = await charges.GetChargeTransactions(chargeId, page, size);
+Models.GetChargeResponse result = await charges.GetCharge(chargeId);
 
 ```
 
 
-### <a name="update_charge_due_date"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargeDueDate") UpdateChargeDueDate
+### <a name="retry_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.RetryCharge") RetryCharge
 
-> Updates the due date from a charge
+> Retries a charge
 
 
 ```csharp
-Task<Models.GetChargeResponse> UpdateChargeDueDate(string chargeId, Models.UpdateChargeDueDateRequest request, string idempotencyKey = null)
+Task<Models.GetChargeResponse> RetryCharge(string chargeId, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge Id |
-| request |  ``` Required ```  | Request for updating the due date |
+| chargeId |  ``` Required ```  | Charge id |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -2928,10 +2918,9 @@ Task<Models.GetChargeResponse> UpdateChargeDueDate(string chargeId, Models.Updat
 
 ```csharp
 string chargeId = "charge_id";
-var request = new Models.UpdateChargeDueDateRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetChargeResponse result = await charges.UpdateChargeDueDate(chargeId, request, idempotencyKey);
+Models.GetChargeResponse result = await charges.RetryCharge(chargeId, idempotencyKey);
 
 ```
 
@@ -2972,8 +2961,8 @@ Task<Models.ListChargesResponse> GetCharges(
 #### Example Usage
 
 ```csharp
-int? page = 204;
-int? size = 204;
+int? page = 87;
+int? size = 87;
 string code = "code";
 string status = "status";
 string paymentMethod = "payment_method";
@@ -2987,21 +2976,21 @@ Models.ListChargesResponse result = await charges.GetCharges(page, size, code, s
 ```
 
 
-### <a name="update_charge_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargeCard") UpdateChargeCard
+### <a name="update_charge_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargeMetadata") UpdateChargeMetadata
 
-> Updates the card from a charge
+> Updates the metadata from a charge
 
 
 ```csharp
-Task<Models.GetChargeResponse> UpdateChargeCard(string chargeId, Models.UpdateChargeCardRequest request, string idempotencyKey = null)
+Task<Models.GetChargeResponse> UpdateChargeMetadata(string chargeId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| request |  ``` Required ```  | Request for updating a charge's card |
+| chargeId |  ``` Required ```  | The charge id |
+| request |  ``` Required ```  | Request for updating the charge metadata |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -3009,94 +2998,10 @@ Task<Models.GetChargeResponse> UpdateChargeCard(string chargeId, Models.UpdateCh
 
 ```csharp
 string chargeId = "charge_id";
-var request = new Models.UpdateChargeCardRequest();
+var request = new Models.UpdateMetadataRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetChargeResponse result = await charges.UpdateChargeCard(chargeId, request, idempotencyKey);
-
-```
-
-
-### <a name="get_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetCharge") GetCharge
-
-> Get a charge from its id
-
-
-```csharp
-Task<Models.GetChargeResponse> GetCharge(string chargeId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-
-
-#### Example Usage
-
-```csharp
-string chargeId = "charge_id";
-
-Models.GetChargeResponse result = await charges.GetCharge(chargeId);
-
-```
-
-
-### <a name="get_charges_summary"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetChargesSummary") GetChargesSummary
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetChargesSummaryResponse> GetChargesSummary(string status, DateTime? createdSince = null, DateTime? createdUntil = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| status |  ``` Required ```  | TODO: Add a parameter description |
-| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
-| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string status = "status";
-DateTime? createdSince = DateTime.Now();
-DateTime? createdUntil = DateTime.Now();
-
-Models.GetChargesSummaryResponse result = await charges.GetChargesSummary(status, createdSince, createdUntil);
-
-```
-
-
-### <a name="retry_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.RetryCharge") RetryCharge
-
-> Retries a charge
-
-
-```csharp
-Task<Models.GetChargeResponse> RetryCharge(string chargeId, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| chargeId |  ``` Required ```  | Charge id |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string chargeId = "charge_id";
-string idempotencyKey = "idempotency-key";
-
-Models.GetChargeResponse result = await charges.RetryCharge(chargeId, idempotencyKey);
+Models.GetChargeResponse result = await charges.UpdateChargeMetadata(chargeId, request, idempotencyKey);
 
 ```
 
@@ -3131,30 +3036,62 @@ Models.GetChargeResponse result = await charges.CancelCharge(chargeId, request, 
 ```
 
 
-### <a name="create_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.CreateCharge") CreateCharge
+### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.CaptureCharge") CaptureCharge
 
-> Creates a new charge
+> Captures a charge
 
 
 ```csharp
-Task<Models.GetChargeResponse> CreateCharge(Models.CreateChargeRequest request, string idempotencyKey = null)
+Task<Models.GetChargeResponse> CaptureCharge(string chargeId, Models.CreateCaptureChargeRequest request = null, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| request |  ``` Required ```  | Request for creating a charge |
+| chargeId |  ``` Required ```  | Charge id |
+| request |  ``` Optional ```  | Request for capturing a charge |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var request = new Models.CreateChargeRequest();
+string chargeId = "charge_id";
+var request = new Models.CreateCaptureChargeRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetChargeResponse result = await charges.CreateCharge(request, idempotencyKey);
+Models.GetChargeResponse result = await charges.CaptureCharge(chargeId, request, idempotencyKey);
+
+```
+
+
+### <a name="update_charge_due_date"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargeDueDate") UpdateChargeDueDate
+
+> Updates the due date from a charge
+
+
+```csharp
+Task<Models.GetChargeResponse> UpdateChargeDueDate(string chargeId, Models.UpdateChargeDueDateRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| chargeId |  ``` Required ```  | Charge Id |
+| request |  ``` Required ```  | Request for updating the due date |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string chargeId = "charge_id";
+var request = new Models.UpdateChargeDueDateRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetChargeResponse result = await charges.UpdateChargeDueDate(chargeId, request, idempotencyKey);
 
 ```
 
@@ -3189,84 +3126,62 @@ Models.GetChargeResponse result = await charges.ConfirmPayment(chargeId, request
 ```
 
 
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.TransfersController") TransfersController
-
-### Get singleton instance
-
-The singleton instance of the ``` TransfersController ``` class can be accessed from the API Client.
-
-```csharp
-ITransfersController transfers = client.Transfers;
-```
-
-### <a name="get_transfer_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransfersController.GetTransferById") GetTransferById
+### <a name="get_charge_transactions"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetChargeTransactions") GetChargeTransactions
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.GetTransfer> GetTransferById(string transferId)
+Task<Models.ListChargeTransactionsResponse> GetChargeTransactions(string chargeId, int? page = null, int? size = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| transferId |  ``` Required ```  | TODO: Add a parameter description |
+| chargeId |  ``` Required ```  | Charge Id |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
 
 
 #### Example Usage
 
 ```csharp
-string transferId = "transfer_id";
+string chargeId = "charge_id";
+int? page = 178;
+int? size = 178;
 
-Models.GetTransfer result = await transfers.GetTransferById(transferId);
+Models.ListChargeTransactionsResponse result = await charges.GetChargeTransactions(chargeId, page, size);
 
 ```
 
 
-### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransfersController.CreateTransfer") CreateTransfer
+### <a name="get_charges_summary"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetChargesSummary") GetChargesSummary
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.GetTransfer> CreateTransfer(Models.CreateTransfer request)
+Task<Models.GetChargesSummaryResponse> GetChargesSummary(string status, DateTime? createdSince = null, DateTime? createdUntil = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| request |  ``` Required ```  | TODO: Add a parameter description |
+| status |  ``` Required ```  | TODO: Add a parameter description |
+| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
+| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-var request = new Models.CreateTransfer();
+string status = "status";
+DateTime? createdSince = DateTime.Now();
+DateTime? createdUntil = DateTime.Now();
 
-Models.GetTransfer result = await transfers.CreateTransfer(request);
-
-```
-
-
-### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransfersController.GetTransfers") GetTransfers
-
-> Gets all transfers
-
-
-```csharp
-Task<Models.ListTransfers> GetTransfers()
-```
-
-#### Example Usage
-
-```csharp
-
-Models.ListTransfers result = await transfers.GetTransfers();
+Models.GetChargesSummaryResponse result = await charges.GetChargesSummary(status, createdSince, createdUntil);
 
 ```
 
@@ -3282,210 +3197,6 @@ The singleton instance of the ``` RecipientsController ``` class can be accessed
 ```csharp
 IRecipientsController recipients = client.Recipients;
 ```
-
-### <a name="get_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetTransfer") GetTransfer
-
-> Gets a transfer
-
-
-```csharp
-Task<Models.GetTransferResponse> GetTransfer(string recipientId, string transferId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| transferId |  ``` Required ```  | Transfer id |
-
-
-#### Example Usage
-
-```csharp
-string recipientId = "recipient_id";
-string transferId = "transfer_id";
-
-Models.GetTransferResponse result = await recipients.GetTransfer(recipientId, transferId);
-
-```
-
-
-### <a name="update_recipient"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipient") UpdateRecipient
-
-> Updates a recipient
-
-
-```csharp
-Task<Models.GetRecipientResponse> UpdateRecipient(string recipientId, Models.UpdateRecipientRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| request |  ``` Required ```  | Recipient data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string recipientId = "recipient_id";
-var request = new Models.UpdateRecipientRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetRecipientResponse result = await recipients.UpdateRecipient(recipientId, request, idempotencyKey);
-
-```
-
-
-### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.CreateAnticipation") CreateAnticipation
-
-> Creates an anticipation
-
-
-```csharp
-Task<Models.GetAnticipationResponse> CreateAnticipation(string recipientId, Models.CreateAnticipationRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| request |  ``` Required ```  | Anticipation data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string recipientId = "recipient_id";
-var request = new Models.CreateAnticipationRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetAnticipationResponse result = await recipients.CreateAnticipation(recipientId, request, idempotencyKey);
-
-```
-
-
-### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetAnticipationLimits") GetAnticipationLimits
-
-> Gets the anticipation limits for a recipient
-
-
-```csharp
-Task<Models.GetAnticipationLimitResponse> GetAnticipationLimits(string recipientId, string timeframe, DateTime paymentDate)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| timeframe |  ``` Required ```  | Timeframe |
-| paymentDate |  ``` Required ```  | Anticipation payment date |
-
-
-#### Example Usage
-
-```csharp
-string recipientId = "recipient_id";
-string timeframe = "timeframe";
-DateTime paymentDate = DateTime.Now();
-
-Models.GetAnticipationLimitResponse result = await recipients.GetAnticipationLimits(recipientId, timeframe, paymentDate);
-
-```
-
-
-### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetRecipients") GetRecipients
-
-> Retrieves paginated recipients information
-
-
-```csharp
-Task<Models.ListRecipientResponse> GetRecipients(int? page = null, int? size = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| page |  ``` Optional ```  | Page number |
-| size |  ``` Optional ```  | Page size |
-
-
-#### Example Usage
-
-```csharp
-int? page = 204;
-int? size = 204;
-
-Models.ListRecipientResponse result = await recipients.GetRecipients(page, size);
-
-```
-
-
-### <a name="get_withdraw_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetWithdrawById") GetWithdrawById
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetWithdrawResponse> GetWithdrawById(string recipientId, string withdrawalId)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | TODO: Add a parameter description |
-| withdrawalId |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string recipientId = "recipient_id";
-string withdrawalId = "withdrawal_id";
-
-Models.GetWithdrawResponse result = await recipients.GetWithdrawById(recipientId, withdrawalId);
-
-```
-
-
-### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipientDefaultBankAccount") UpdateRecipientDefaultBankAccount
-
-> Updates the default bank account from a recipient
-
-
-```csharp
-Task<Models.GetRecipientResponse> UpdateRecipientDefaultBankAccount(string recipientId, Models.UpdateRecipientBankAccountRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient id |
-| request |  ``` Required ```  | Bank account data |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string recipientId = "recipient_id";
-var request = new Models.UpdateRecipientBankAccountRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetRecipientResponse result = await recipients.UpdateRecipientDefaultBankAccount(recipientId, request, idempotencyKey);
-
-```
-
 
 ### <a name="update_recipient_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipientMetadata") UpdateRecipientMetadata
 
@@ -3513,6 +3224,34 @@ var request = new Models.UpdateMetadataRequest();
 string idempotencyKey = "idempotency-key";
 
 Models.GetRecipientResponse result = await recipients.UpdateRecipientMetadata(recipientId, request, idempotencyKey);
+
+```
+
+
+### <a name="get_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetTransfer") GetTransfer
+
+> Gets a transfer
+
+
+```csharp
+Task<Models.GetTransferResponse> GetTransfer(string recipientId, string transferId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| transferId |  ``` Required ```  | Transfer id |
+
+
+#### Example Usage
+
+```csharp
+string recipientId = "recipient_id";
+string transferId = "transfer_id";
+
+Models.GetTransferResponse result = await recipients.GetTransfer(recipientId, transferId);
 
 ```
 
@@ -3548,8 +3287,8 @@ Task<Models.ListTransferResponse> GetTransfers(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 204;
-int? size = 204;
+int? page = 178;
+int? size = 178;
 string status = "status";
 DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
@@ -3559,41 +3298,13 @@ Models.ListTransferResponse result = await recipients.GetTransfers(recipientId, 
 ```
 
 
-### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.CreateWithdraw") CreateWithdraw
+### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.CreateAnticipation") CreateAnticipation
 
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetWithdrawResponse> CreateWithdraw(string recipientId, Models.CreateWithdrawRequest request)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| recipientId |  ``` Required ```  | TODO: Add a parameter description |
-| request |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string recipientId = "recipient_id";
-var request = new Models.CreateWithdrawRequest();
-
-Models.GetWithdrawResponse result = await recipients.CreateWithdraw(recipientId, request);
-
-```
-
-
-### <a name="update_automatic_anticipation_settings"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateAutomaticAnticipationSettings") UpdateAutomaticAnticipationSettings
-
-> Updates recipient metadata
+> Creates an anticipation
 
 
 ```csharp
-Task<Models.GetRecipientResponse> UpdateAutomaticAnticipationSettings(string recipientId, Models.UpdateAutomaticAnticipationSettingsRequest request, string idempotencyKey = null)
+Task<Models.GetAnticipationResponse> CreateAnticipation(string recipientId, Models.CreateAnticipationRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
@@ -3601,7 +3312,7 @@ Task<Models.GetRecipientResponse> UpdateAutomaticAnticipationSettings(string rec
 | Parameter | Tags | Description |
 |-----------|------|-------------|
 | recipientId |  ``` Required ```  | Recipient id |
-| request |  ``` Required ```  | Metadata |
+| request |  ``` Required ```  | Anticipation data |
 | idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
@@ -3609,10 +3320,10 @@ Task<Models.GetRecipientResponse> UpdateAutomaticAnticipationSettings(string rec
 
 ```csharp
 string recipientId = "recipient_id";
-var request = new Models.UpdateAutomaticAnticipationSettingsRequest();
+var request = new Models.CreateAnticipationRequest();
 string idempotencyKey = "idempotency-key";
 
-Models.GetRecipientResponse result = await recipients.UpdateAutomaticAnticipationSettings(recipientId, request, idempotencyKey);
+Models.GetAnticipationResponse result = await recipients.CreateAnticipation(recipientId, request, idempotencyKey);
 
 ```
 
@@ -3645,32 +3356,32 @@ Models.GetAnticipationResponse result = await recipients.GetAnticipation(recipie
 ```
 
 
-### <a name="update_recipient_transfer_settings"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipientTransferSettings") UpdateRecipientTransferSettings
+### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetAnticipationLimits") GetAnticipationLimits
 
-> TODO: Add a method description
+> Gets the anticipation limits for a recipient
 
 
 ```csharp
-Task<Models.GetRecipientResponse> UpdateRecipientTransferSettings(string recipientId, Models.UpdateTransferSettingsRequest request, string idempotencyKey = null)
+Task<Models.GetAnticipationLimitResponse> GetAnticipationLimits(string recipientId, string timeframe, DateTime paymentDate)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| recipientId |  ``` Required ```  | Recipient Identificator |
-| request |  ``` Required ```  | TODO: Add a parameter description |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| recipientId |  ``` Required ```  | Recipient id |
+| timeframe |  ``` Required ```  | Timeframe |
+| paymentDate |  ``` Required ```  | Anticipation payment date |
 
 
 #### Example Usage
 
 ```csharp
 string recipientId = "recipient_id";
-var request = new Models.UpdateTransferSettingsRequest();
-string idempotencyKey = "idempotency-key";
+string timeframe = "timeframe";
+DateTime paymentDate = DateTime.Now();
 
-Models.GetRecipientResponse result = await recipients.UpdateRecipientTransferSettings(recipientId, request, idempotencyKey);
+Models.GetAnticipationLimitResponse result = await recipients.GetAnticipationLimits(recipientId, timeframe, paymentDate);
 
 ```
 
@@ -3712,8 +3423,8 @@ Task<Models.ListAnticipationResponse> GetAnticipations(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 204;
-int? size = 204;
+int? page = 178;
+int? size = 178;
 string status = "status";
 string timeframe = "timeframe";
 DateTime? paymentDateSince = DateTime.Now();
@@ -3722,6 +3433,66 @@ DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
 
 Models.ListAnticipationResponse result = await recipients.GetAnticipations(recipientId, page, size, status, timeframe, paymentDateSince, paymentDateUntil, createdSince, createdUntil);
+
+```
+
+
+### <a name="update_recipient"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipient") UpdateRecipient
+
+> Updates a recipient
+
+
+```csharp
+Task<Models.GetRecipientResponse> UpdateRecipient(string recipientId, Models.UpdateRecipientRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| request |  ``` Required ```  | Recipient data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string recipientId = "recipient_id";
+var request = new Models.UpdateRecipientRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetRecipientResponse result = await recipients.UpdateRecipient(recipientId, request, idempotencyKey);
+
+```
+
+
+### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipientDefaultBankAccount") UpdateRecipientDefaultBankAccount
+
+> Updates the default bank account from a recipient
+
+
+```csharp
+Task<Models.GetRecipientResponse> UpdateRecipientDefaultBankAccount(string recipientId, Models.UpdateRecipientBankAccountRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| request |  ``` Required ```  | Bank account data |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string recipientId = "recipient_id";
+var request = new Models.UpdateRecipientBankAccountRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetRecipientResponse result = await recipients.UpdateRecipientDefaultBankAccount(recipientId, request, idempotencyKey);
 
 ```
 
@@ -3752,44 +3523,30 @@ Models.GetRecipientResponse result = await recipients.GetRecipient(recipientId);
 ```
 
 
-### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetWithdrawals") GetWithdrawals
+### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetRecipients") GetRecipients
 
-> Gets a paginated list of transfers for the recipient
+> Retrieves paginated recipients information
 
 
 ```csharp
-Task<Models.ListWithdrawals> GetWithdrawals(
-        string recipientId,
-        int? page = null,
-        int? size = null,
-        string status = null,
-        DateTime? createdSince = null,
-        DateTime? createdUntil = null)
+Task<Models.ListRecipientResponse> GetRecipients(int? page = null, int? size = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| recipientId |  ``` Required ```  | TODO: Add a parameter description |
-| page |  ``` Optional ```  | TODO: Add a parameter description |
-| size |  ``` Optional ```  | TODO: Add a parameter description |
-| status |  ``` Optional ```  | TODO: Add a parameter description |
-| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
-| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
+| page |  ``` Optional ```  | Page number |
+| size |  ``` Optional ```  | Page size |
 
 
 #### Example Usage
 
 ```csharp
-string recipientId = "recipient_id";
-int? page = 204;
-int? size = 204;
-string status = "status";
-DateTime? createdSince = DateTime.Now();
-DateTime? createdUntil = DateTime.Now();
+int? page = 178;
+int? size = 178;
 
-Models.ListWithdrawals result = await recipients.GetWithdrawals(recipientId, page, size, status, createdSince, createdUntil);
+Models.ListRecipientResponse result = await recipients.GetRecipients(page, size);
 
 ```
 
@@ -3878,6 +3635,164 @@ Models.GetRecipientResponse result = await recipients.CreateRecipient(request, i
 ```
 
 
+### <a name="update_recipient_transfer_settings"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipientTransferSettings") UpdateRecipientTransferSettings
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetRecipientResponse> UpdateRecipientTransferSettings(string recipientId, Models.UpdateTransferSettingsRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient Identificator |
+| request |  ``` Required ```  | TODO: Add a parameter description |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string recipientId = "recipient_id";
+var request = new Models.UpdateTransferSettingsRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetRecipientResponse result = await recipients.UpdateRecipientTransferSettings(recipientId, request, idempotencyKey);
+
+```
+
+
+### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.CreateWithdraw") CreateWithdraw
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetWithdrawResponse> CreateWithdraw(string recipientId, Models.CreateWithdrawRequest request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string recipientId = "recipient_id";
+var request = new Models.CreateWithdrawRequest();
+
+Models.GetWithdrawResponse result = await recipients.CreateWithdraw(recipientId, request);
+
+```
+
+
+### <a name="get_withdraw_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetWithdrawById") GetWithdrawById
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetWithdrawResponse> GetWithdrawById(string recipientId, string withdrawalId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| withdrawalId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string recipientId = "recipient_id";
+string withdrawalId = "withdrawal_id";
+
+Models.GetWithdrawResponse result = await recipients.GetWithdrawById(recipientId, withdrawalId);
+
+```
+
+
+### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetWithdrawals") GetWithdrawals
+
+> Gets a paginated list of transfers for the recipient
+
+
+```csharp
+Task<Models.ListWithdrawals> GetWithdrawals(
+        string recipientId,
+        int? page = null,
+        int? size = null,
+        string status = null,
+        DateTime? createdSince = null,
+        DateTime? createdUntil = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | TODO: Add a parameter description |
+| page |  ``` Optional ```  | TODO: Add a parameter description |
+| size |  ``` Optional ```  | TODO: Add a parameter description |
+| status |  ``` Optional ```  | TODO: Add a parameter description |
+| createdSince |  ``` Optional ```  | TODO: Add a parameter description |
+| createdUntil |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string recipientId = "recipient_id";
+int? page = 178;
+int? size = 178;
+string status = "status";
+DateTime? createdSince = DateTime.Now();
+DateTime? createdUntil = DateTime.Now();
+
+Models.ListWithdrawals result = await recipients.GetWithdrawals(recipientId, page, size, status, createdSince, createdUntil);
+
+```
+
+
+### <a name="update_automatic_anticipation_settings"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateAutomaticAnticipationSettings") UpdateAutomaticAnticipationSettings
+
+> Updates recipient metadata
+
+
+```csharp
+Task<Models.GetRecipientResponse> UpdateAutomaticAnticipationSettings(string recipientId, Models.UpdateAutomaticAnticipationSettingsRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| recipientId |  ``` Required ```  | Recipient id |
+| request |  ``` Required ```  | Metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string recipientId = "recipient_id";
+var request = new Models.UpdateAutomaticAnticipationSettingsRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetRecipientResponse result = await recipients.UpdateAutomaticAnticipationSettings(recipientId, request, idempotencyKey);
+
+```
+
+
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="tokens_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.TokensController") TokensController
@@ -3889,6 +3804,36 @@ The singleton instance of the ``` TokensController ``` class can be accessed fro
 ```csharp
 ITokensController tokens = client.Tokens;
 ```
+
+### <a name="get_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TokensController.GetToken") GetToken
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Gets a token from its id
+
+
+```csharp
+Task<Models.GetTokenResponse> GetToken(string id, string publicKey)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| id |  ``` Required ```  | Token id |
+| publicKey |  ``` Required ```  | Public key |
+
+
+#### Example Usage
+
+```csharp
+string id = "id";
+string publicKey = "public_key";
+
+Models.GetTokenResponse result = await tokens.GetToken(id, publicKey);
+
+```
+
 
 ### <a name="create_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TokensController.CreateToken") CreateToken
 
@@ -3922,36 +3867,6 @@ Models.GetTokenResponse result = await tokens.CreateToken(publicKey, request, id
 ```
 
 
-### <a name="get_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TokensController.GetToken") GetToken
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Gets a token from its id
-
-
-```csharp
-Task<Models.GetTokenResponse> GetToken(string id, string publicKey)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | Token id |
-| publicKey |  ``` Required ```  | Public key |
-
-
-#### Example Usage
-
-```csharp
-string id = "id";
-string publicKey = "public_key";
-
-Models.GetTokenResponse result = await tokens.GetToken(id, publicKey);
-
-```
-
-
 [Back to List of Controllers](#list_of_controllers)
 
 ## <a name="sellers_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.SellersController") SellersController
@@ -3964,90 +3879,28 @@ The singleton instance of the ``` SellersController ``` class can be accessed fr
 ISellersController sellers = client.Sellers;
 ```
 
-### <a name="create_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.CreateSeller") CreateSeller
+### <a name="get_seller_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.GetSellerById") GetSellerById
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.GetSellerResponse> CreateSeller(Models.CreateSellerRequest request, string idempotencyKey = null)
+Task<Models.GetSellerResponse> GetSellerById(string id)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| request |  ``` Required ```  | Seller Model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-var request = new Models.CreateSellerRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSellerResponse result = await sellers.CreateSeller(request, idempotencyKey);
-
-```
-
-
-### <a name="update_seller_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.UpdateSellerMetadata") UpdateSellerMetadata
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetSellerResponse> UpdateSellerMetadata(string sellerId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| sellerId |  ``` Required ```  | Seller Id |
-| request |  ``` Required ```  | Request for updating the charge metadata |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```csharp
-string sellerId = "seller_id";
-var request = new Models.UpdateMetadataRequest();
-string idempotencyKey = "idempotency-key";
-
-Models.GetSellerResponse result = await sellers.UpdateSellerMetadata(sellerId, request, idempotencyKey);
-
-```
-
-
-### <a name="update_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.UpdateSeller") UpdateSeller
-
-> TODO: Add a method description
-
-
-```csharp
-Task<Models.GetSellerResponse> UpdateSeller(string id, Models.UpdateSellerRequest request, string idempotencyKey = null)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| id |  ``` Required ```  | TODO: Add a parameter description |
-| request |  ``` Required ```  | Update Seller model |
-| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+| id |  ``` Required ```  | Seller Id |
 
 
 #### Example Usage
 
 ```csharp
 string id = "id";
-var request = new Models.UpdateSellerRequest();
-string idempotencyKey = "idempotency-key";
 
-Models.GetSellerResponse result = await sellers.UpdateSeller(id, request, idempotencyKey);
+Models.GetSellerResponse result = await sellers.GetSellerById(id);
 
 ```
 
@@ -4080,28 +3933,30 @@ Models.GetSellerResponse result = await sellers.DeleteSeller(sellerId, idempoten
 ```
 
 
-### <a name="get_seller_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.GetSellerById") GetSellerById
+### <a name="create_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.CreateSeller") CreateSeller
 
 > TODO: Add a method description
 
 
 ```csharp
-Task<Models.GetSellerResponse> GetSellerById(string id)
+Task<Models.GetSellerResponse> CreateSeller(Models.CreateSellerRequest request, string idempotencyKey = null)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| id |  ``` Required ```  | Seller Id |
+| request |  ``` Required ```  | Seller Model |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```csharp
-string id = "id";
+var request = new Models.CreateSellerRequest();
+string idempotencyKey = "idempotency-key";
 
-Models.GetSellerResponse result = await sellers.GetSellerById(id);
+Models.GetSellerResponse result = await sellers.CreateSeller(request, idempotencyKey);
 
 ```
 
@@ -4142,8 +3997,8 @@ Task<Models.ListSellerResponse> GetSellers(
 #### Example Usage
 
 ```csharp
-int? page = 204;
-int? size = 204;
+int? page = 178;
+int? size = 178;
 string name = "name";
 string document = "document";
 string code = "code";
@@ -4153,6 +4008,66 @@ DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
 
 Models.ListSellerResponse result = await sellers.GetSellers(page, size, name, document, code, status, type, createdSince, createdUntil);
+
+```
+
+
+### <a name="update_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.UpdateSeller") UpdateSeller
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetSellerResponse> UpdateSeller(string id, Models.UpdateSellerRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| id |  ``` Required ```  | TODO: Add a parameter description |
+| request |  ``` Required ```  | Update Seller model |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string id = "id";
+var request = new Models.UpdateSellerRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSellerResponse result = await sellers.UpdateSeller(id, request, idempotencyKey);
+
+```
+
+
+### <a name="update_seller_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.UpdateSellerMetadata") UpdateSellerMetadata
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetSellerResponse> UpdateSellerMetadata(string sellerId, Models.UpdateMetadataRequest request, string idempotencyKey = null)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| sellerId |  ``` Required ```  | Seller Id |
+| request |  ``` Required ```  | Request for updating the charge metadata |
+| idempotencyKey |  ``` Optional ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string sellerId = "seller_id";
+var request = new Models.UpdateMetadataRequest();
+string idempotencyKey = "idempotency-key";
+
+Models.GetSellerResponse result = await sellers.UpdateSellerMetadata(sellerId, request, idempotencyKey);
 
 ```
 
@@ -4191,6 +4106,88 @@ Task<Models.GetTransactionResponse> GetTransaction(string transactionId)
 string transactionId = "transaction_id";
 
 Models.GetTransactionResponse result = await transactions.GetTransaction(transactionId);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.TransfersController") TransfersController
+
+### Get singleton instance
+
+The singleton instance of the ``` TransfersController ``` class can be accessed from the API Client.
+
+```csharp
+ITransfersController transfers = client.Transfers;
+```
+
+### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransfersController.CreateTransfer") CreateTransfer
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetTransfer> CreateTransfer(Models.CreateTransfer request)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| request |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+var request = new Models.CreateTransfer();
+
+Models.GetTransfer result = await transfers.CreateTransfer(request);
+
+```
+
+
+### <a name="get_transfer_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransfersController.GetTransferById") GetTransferById
+
+> TODO: Add a method description
+
+
+```csharp
+Task<Models.GetTransfer> GetTransferById(string transferId)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| transferId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+#### Example Usage
+
+```csharp
+string transferId = "transfer_id";
+
+Models.GetTransfer result = await transfers.GetTransferById(transferId);
+
+```
+
+
+### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransfersController.GetTransfers") GetTransfers
+
+> Gets all transfers
+
+
+```csharp
+Task<Models.ListTransfers> GetTransfers()
+```
+
+#### Example Usage
+
+```csharp
+
+Models.ListTransfers result = await transfers.GetTransfers();
 
 ```
 
