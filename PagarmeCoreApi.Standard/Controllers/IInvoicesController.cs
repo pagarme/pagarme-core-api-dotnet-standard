@@ -21,6 +21,20 @@ namespace PagarmeCoreApi.Standard.Controllers
     public partial interface IInvoicesController
     {
         /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="subscriptionId">Required parameter: Subscription Id</param>
+        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
+        Models.GetInvoiceResponse GetPartialInvoice(string subscriptionId);
+
+        /// <summary>
+        /// TODO: type endpoint description here
+        /// </summary>
+        /// <param name="subscriptionId">Required parameter: Subscription Id</param>
+        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
+        Task<Models.GetInvoiceResponse> GetPartialInvoiceAsync(string subscriptionId);
+
+        /// <summary>
         /// Cancels an invoice
         /// </summary>
         /// <param name="invoiceId">Required parameter: Invoice id</param>
@@ -35,20 +49,6 @@ namespace PagarmeCoreApi.Standard.Controllers
         /// <param name="idempotencyKey">Optional parameter: Example: </param>
         /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
         Task<Models.GetInvoiceResponse> CancelInvoiceAsync(string invoiceId, string idempotencyKey = null);
-
-        /// <summary>
-        /// Gets an invoice
-        /// </summary>
-        /// <param name="invoiceId">Required parameter: Invoice Id</param>
-        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
-        Models.GetInvoiceResponse GetInvoice(string invoiceId);
-
-        /// <summary>
-        /// Gets an invoice
-        /// </summary>
-        /// <param name="invoiceId">Required parameter: Invoice Id</param>
-        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
-        Task<Models.GetInvoiceResponse> GetInvoiceAsync(string invoiceId);
 
         /// <summary>
         /// Create an Invoice
@@ -79,22 +79,22 @@ namespace PagarmeCoreApi.Standard.Controllers
                 string idempotencyKey = null);
 
         /// <summary>
-        /// Updates the status from an invoice
+        /// Updates the metadata from an invoice
         /// </summary>
-        /// <param name="invoiceId">Required parameter: Invoice Id</param>
-        /// <param name="request">Required parameter: Request for updating an invoice's status</param>
+        /// <param name="invoiceId">Required parameter: The invoice id</param>
+        /// <param name="request">Required parameter: Request for updating the invoice metadata</param>
         /// <param name="idempotencyKey">Optional parameter: Example: </param>
         /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
-        Models.GetInvoiceResponse UpdateInvoiceStatus(string invoiceId, Models.UpdateInvoiceStatusRequest request, string idempotencyKey = null);
+        Models.GetInvoiceResponse UpdateInvoiceMetadata(string invoiceId, Models.UpdateMetadataRequest request, string idempotencyKey = null);
 
         /// <summary>
-        /// Updates the status from an invoice
+        /// Updates the metadata from an invoice
         /// </summary>
-        /// <param name="invoiceId">Required parameter: Invoice Id</param>
-        /// <param name="request">Required parameter: Request for updating an invoice's status</param>
+        /// <param name="invoiceId">Required parameter: The invoice id</param>
+        /// <param name="request">Required parameter: Request for updating the invoice metadata</param>
         /// <param name="idempotencyKey">Optional parameter: Example: </param>
         /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
-        Task<Models.GetInvoiceResponse> UpdateInvoiceStatusAsync(string invoiceId, Models.UpdateInvoiceStatusRequest request, string idempotencyKey = null);
+        Task<Models.GetInvoiceResponse> UpdateInvoiceMetadataAsync(string invoiceId, Models.UpdateMetadataRequest request, string idempotencyKey = null);
 
         /// <summary>
         /// Gets all invoices
@@ -153,36 +153,36 @@ namespace PagarmeCoreApi.Standard.Controllers
                 string customerDocument = null);
 
         /// <summary>
-        /// Updates the metadata from an invoice
+        /// Gets an invoice
         /// </summary>
-        /// <param name="invoiceId">Required parameter: The invoice id</param>
-        /// <param name="request">Required parameter: Request for updating the invoice metadata</param>
+        /// <param name="invoiceId">Required parameter: Invoice Id</param>
+        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
+        Models.GetInvoiceResponse GetInvoice(string invoiceId);
+
+        /// <summary>
+        /// Gets an invoice
+        /// </summary>
+        /// <param name="invoiceId">Required parameter: Invoice Id</param>
+        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
+        Task<Models.GetInvoiceResponse> GetInvoiceAsync(string invoiceId);
+
+        /// <summary>
+        /// Updates the status from an invoice
+        /// </summary>
+        /// <param name="invoiceId">Required parameter: Invoice Id</param>
+        /// <param name="request">Required parameter: Request for updating an invoice's status</param>
         /// <param name="idempotencyKey">Optional parameter: Example: </param>
         /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
-        Models.GetInvoiceResponse UpdateInvoiceMetadata(string invoiceId, Models.UpdateMetadataRequest request, string idempotencyKey = null);
+        Models.GetInvoiceResponse UpdateInvoiceStatus(string invoiceId, Models.UpdateInvoiceStatusRequest request, string idempotencyKey = null);
 
         /// <summary>
-        /// Updates the metadata from an invoice
+        /// Updates the status from an invoice
         /// </summary>
-        /// <param name="invoiceId">Required parameter: The invoice id</param>
-        /// <param name="request">Required parameter: Request for updating the invoice metadata</param>
+        /// <param name="invoiceId">Required parameter: Invoice Id</param>
+        /// <param name="request">Required parameter: Request for updating an invoice's status</param>
         /// <param name="idempotencyKey">Optional parameter: Example: </param>
         /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
-        Task<Models.GetInvoiceResponse> UpdateInvoiceMetadataAsync(string invoiceId, Models.UpdateMetadataRequest request, string idempotencyKey = null);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: Subscription Id</param>
-        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
-        Models.GetInvoiceResponse GetPartialInvoice(string subscriptionId);
-
-        /// <summary>
-        /// TODO: type endpoint description here
-        /// </summary>
-        /// <param name="subscriptionId">Required parameter: Subscription Id</param>
-        /// <return>Returns the Models.GetInvoiceResponse response from the API call</return>
-        Task<Models.GetInvoiceResponse> GetPartialInvoiceAsync(string subscriptionId);
+        Task<Models.GetInvoiceResponse> UpdateInvoiceStatusAsync(string invoiceId, Models.UpdateInvoiceStatusRequest request, string idempotencyKey = null);
 
     }
 } 
