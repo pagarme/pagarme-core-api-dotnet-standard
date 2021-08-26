@@ -6,7 +6,7 @@ namespace PagarmeCoreApi.Standard
 
 
         //The base Uri for API calls
-        public static string BaseUri = "https://api.pagar.me/core/v1";
+        public static string BaseUri = "https://api.pagar.me/core/v5";
 
         //The username to use with basic authentication
         //TODO: Replace the BasicAuthUserName with an appropriate value
