@@ -9,50 +9,50 @@ is enabled, these dependencies will be installed automatically. Therefore,
 you will need internet access for build.
 
 "This library requires Visual Studio 2017 for compilation."
-1. Open the solution (PagarmeCoreApi.sln) file.
+1. Open the solution (PagarMe.sln) file.
 2. Invoke the build process using `Ctrl+Shift+B` shortcut key or using the `Build` menu as shown below.
 
-![Building SDK using Visual Studio](https://apidocs.io/illustration/cs?step=buildSDK&workspaceFolder=Pagarme.Core.Api-CSharp&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApi.Standard)
+![Building SDK using Visual Studio](https://apidocs.io/illustration/cs?step=buildSDK&workspaceFolder=Pagar.me-CSharp&workspaceName=PagarMe&projectName=PagarMe.Standard)
 
 ## How to Use
 
 The build process generates a portable class library, which can be used like a normal class library. The generated library is compatible with Windows Forms, Windows RT, Windows Phone 8,
 Silverlight 5, Xamarin iOS, Xamarin Android and Mono. More information on how to use can be found at the [MSDN Portable Class Libraries documentation](http://msdn.microsoft.com/en-us/library/vstudio/gg597391%28v=vs.100%29.aspx).
 
-The following section explains how to use the PagarmeCoreApi library in a new console project.
+The following section explains how to use the PagarMe library in a new console project.
 
 ### 1. Starting a new project
 
 For starting a new project, right click on the current solution from the *solution explorer* and choose  ``` Add -> New Project ```.
 
-![Add a new project in the existing solution using Visual Studio](https://apidocs.io/illustration/cs?step=addProject&workspaceFolder=Pagarme.Core.Api-CSharp&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApi.Standard)
+![Add a new project in the existing solution using Visual Studio](https://apidocs.io/illustration/cs?step=addProject&workspaceFolder=Pagar.me-CSharp&workspaceName=PagarMe&projectName=PagarMe.Standard)
 
 Next, choose "Console Application", provide a ``` TestConsoleProject ``` as the project name and click ``` OK ```.
 
-![Create a new console project using Visual Studio](https://apidocs.io/illustration/cs?step=createProject&workspaceFolder=Pagarme.Core.Api-CSharp&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApi.Standard)
+![Create a new console project using Visual Studio](https://apidocs.io/illustration/cs?step=createProject&workspaceFolder=Pagar.me-CSharp&workspaceName=PagarMe&projectName=PagarMe.Standard)
 
 ### 2. Set as startup project
 
 The new console project is the entry point for the eventual execution. This requires us to set the ``` TestConsoleProject ``` as the start-up project. To do this, right-click on the  ``` TestConsoleProject ``` and choose  ``` Set as StartUp Project ``` form the context menu.
 
-![Set the new cosole project as the start up project](https://apidocs.io/illustration/cs?step=setStartup&workspaceFolder=Pagarme.Core.Api-CSharp&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApi.Standard)
+![Set the new cosole project as the start up project](https://apidocs.io/illustration/cs?step=setStartup&workspaceFolder=Pagar.me-CSharp&workspaceName=PagarMe&projectName=PagarMe.Standard)
 
 ### 3. Add reference of the library project
 
-In order to use the PagarmeCoreApi library in the new project, first we must add a projet reference to the ``` TestConsoleProject ```. First, right click on the ``` References ``` node in the *solution explorer* and click ``` Add Reference... ```.
+In order to use the PagarMe library in the new project, first we must add a projet reference to the ``` TestConsoleProject ```. First, right click on the ``` References ``` node in the *solution explorer* and click ``` Add Reference... ```.
 
-![Open references of the TestConsoleProject](https://apidocs.io/illustration/cs?step=addReference&workspaceFolder=Pagarme.Core.Api-CSharp&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApi.Standard)
+![Open references of the TestConsoleProject](https://apidocs.io/illustration/cs?step=addReference&workspaceFolder=Pagar.me-CSharp&workspaceName=PagarMe&projectName=PagarMe.Standard)
 
-Next, a window will be displayed where we must set the ``` checkbox ``` on ``` PagarmeCoreApi.Standard ``` and click ``` OK ```. By doing this, we have added a reference of the ```PagarmeCoreApi.Standard``` project into the new ``` TestConsoleProject ```.
+Next, a window will be displayed where we must set the ``` checkbox ``` on ``` PagarMe.Standard ``` and click ``` OK ```. By doing this, we have added a reference of the ```PagarMe.Standard``` project into the new ``` TestConsoleProject ```.
 
-![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=createReference&workspaceFolder=Pagarme.Core.Api-CSharp&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApi.Standard)
+![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=createReference&workspaceFolder=Pagar.me-CSharp&workspaceName=PagarMe&projectName=PagarMe.Standard)
 
 ### 4. Write sample code
 
 Once the ``` TestConsoleProject ``` is created, a file named ``` Program.cs ``` will be visible in the *solution explorer* with an empty ``` Main ``` method. This is the entry point for the execution of the entire solution.
 Here, you can add code to initialize the client library and acquire the instance of a *Controller* class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
-![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=addCode&workspaceFolder=Pagarme.Core.Api-CSharp&workspaceName=PagarmeCoreApi&projectName=PagarmeCoreApi.Standard)
+![Add a reference to the TestConsoleProject](https://apidocs.io/illustration/cs?step=addCode&workspaceFolder=Pagar.me-CSharp&workspaceName=PagarMe&projectName=PagarMe.Standard)
 
 ## How to Test
 
@@ -80,7 +80,7 @@ API client can be initialized as following.
 string basicAuthUserName = "basicAuthUserName"; // The username to use with basic authentication
 string basicAuthPassword = "basicAuthPassword"; // The password to use with basic authentication
 
-PagarmeCoreApiClient client = new PagarmeCoreApiClient(basicAuthUserName, basicAuthPassword);
+PagarMeClient client = new PagarMeClient(basicAuthUserName, basicAuthPassword);
 ```
 
 
@@ -101,7 +101,7 @@ PagarmeCoreApiClient client = new PagarmeCoreApiClient(basicAuthUserName, basicA
 * [SellersController](#sellers_controller)
 * [TransactionsController](#transactions_controller)
 
-## <a name="plans_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.PlansController") PlansController
+## <a name="plans_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.PlansController") PlansController
 
 ### Get singleton instance
 
@@ -111,7 +111,7 @@ The singleton instance of the ``` PlansController ``` class can be accessed from
 IPlansController plans = client.Plans;
 ```
 
-### <a name="get_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.GetPlan") GetPlan
+### <a name="get_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.GetPlan") GetPlan
 
 > Gets a plan
 
@@ -137,7 +137,7 @@ Models.GetPlanResponse result = await plans.GetPlan(planId);
 ```
 
 
-### <a name="delete_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.DeletePlan") DeletePlan
+### <a name="delete_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.DeletePlan") DeletePlan
 
 > Deletes a plan
 
@@ -165,7 +165,7 @@ Models.GetPlanResponse result = await plans.DeletePlan(planId, idempotencyKey);
 ```
 
 
-### <a name="update_plan_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.UpdatePlanMetadata") UpdatePlanMetadata
+### <a name="update_plan_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.UpdatePlanMetadata") UpdatePlanMetadata
 
 > Updates the metadata from a plan
 
@@ -195,7 +195,7 @@ Models.GetPlanResponse result = await plans.UpdatePlanMetadata(planId, request, 
 ```
 
 
-### <a name="update_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.UpdatePlanItem") UpdatePlanItem
+### <a name="update_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.UpdatePlanItem") UpdatePlanItem
 
 > Updates a plan item
 
@@ -231,7 +231,7 @@ Models.GetPlanItemResponse result = await plans.UpdatePlanItem(planId, planItemI
 ```
 
 
-### <a name="create_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.CreatePlanItem") CreatePlanItem
+### <a name="create_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.CreatePlanItem") CreatePlanItem
 
 > Adds a new item to a plan
 
@@ -261,7 +261,7 @@ Models.GetPlanItemResponse result = await plans.CreatePlanItem(planId, request, 
 ```
 
 
-### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.GetPlanItem") GetPlanItem
+### <a name="get_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.GetPlanItem") GetPlanItem
 
 > Gets a plan item
 
@@ -289,7 +289,7 @@ Models.GetPlanItemResponse result = await plans.GetPlanItem(planId, planItemId);
 ```
 
 
-### <a name="create_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.CreatePlan") CreatePlan
+### <a name="create_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.CreatePlan") CreatePlan
 
 > Creates a new plan
 
@@ -317,7 +317,7 @@ Models.GetPlanResponse result = await plans.CreatePlan(body, idempotencyKey);
 ```
 
 
-### <a name="delete_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.DeletePlanItem") DeletePlanItem
+### <a name="delete_plan_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.DeletePlanItem") DeletePlanItem
 
 > Removes an item from a plan
 
@@ -347,7 +347,7 @@ Models.GetPlanItemResponse result = await plans.DeletePlanItem(planId, planItemI
 ```
 
 
-### <a name="get_plans"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.GetPlans") GetPlans
+### <a name="get_plans"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.GetPlans") GetPlans
 
 > Gets all plans
 
@@ -379,8 +379,8 @@ Task<Models.ListPlansResponse> GetPlans(
 #### Example Usage
 
 ```csharp
-int? page = 179;
-int? size = 179;
+int? page = 218;
+int? size = 218;
 string name = "name";
 string status = "status";
 string billingType = "billing_type";
@@ -392,7 +392,7 @@ Models.ListPlansResponse result = await plans.GetPlans(page, size, name, status,
 ```
 
 
-### <a name="update_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.PlansController.UpdatePlan") UpdatePlan
+### <a name="update_plan"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.PlansController.UpdatePlan") UpdatePlan
 
 > Updates a plan
 
@@ -424,7 +424,7 @@ Models.GetPlanResponse result = await plans.UpdatePlan(planId, request, idempote
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController") SubscriptionsController
+## <a name="subscriptions_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.SubscriptionsController") SubscriptionsController
 
 ### Get singleton instance
 
@@ -434,7 +434,7 @@ The singleton instance of the ``` SubscriptionsController ``` class can be acces
 ISubscriptionsController subscriptions = client.Subscriptions;
 ```
 
-### <a name="renew_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.RenewSubscription") RenewSubscription
+### <a name="renew_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.RenewSubscription") RenewSubscription
 
 > TODO: Add a method description
 
@@ -462,7 +462,7 @@ Models.GetPeriodResponse result = await subscriptions.RenewSubscription(subscrip
 ```
 
 
-### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionCard") UpdateSubscriptionCard
+### <a name="update_subscription_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateSubscriptionCard") UpdateSubscriptionCard
 
 > Updates the credit card from a subscription
 
@@ -492,7 +492,7 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionCa
 ```
 
 
-### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteUsage") DeleteUsage
+### <a name="delete_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.DeleteUsage") DeleteUsage
 
 > Deletes a usage
 
@@ -528,7 +528,7 @@ Models.GetUsageResponse result = await subscriptions.DeleteUsage(subscriptionId,
 ```
 
 
-### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateDiscount") CreateDiscount
+### <a name="create_discount"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.CreateDiscount") CreateDiscount
 
 > Creates a discount
 
@@ -558,7 +558,7 @@ Models.GetDiscountResponse result = await subscriptions.CreateDiscount(subscript
 ```
 
 
-### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateAnUsage") CreateAnUsage
+### <a name="create_an_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.CreateAnUsage") CreateAnUsage
 
 > Create Usage
 
@@ -588,7 +588,7 @@ Models.GetUsageResponse result = await subscriptions.CreateAnUsage(subscriptionI
 ```
 
 
-### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateCurrentCycleStatus") UpdateCurrentCycleStatus
+### <a name="update_current_cycle_status"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateCurrentCycleStatus") UpdateCurrentCycleStatus
 
 > TODO: Add a method description
 
@@ -618,7 +618,7 @@ await subscriptions.UpdateCurrentCycleStatus(subscriptionId, request, idempotenc
 ```
 
 
-### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteDiscount") DeleteDiscount
+### <a name="delete_discount"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.DeleteDiscount") DeleteDiscount
 
 > Deletes a discount
 
@@ -648,7 +648,7 @@ Models.GetDiscountResponse result = await subscriptions.DeleteDiscount(subscript
 ```
 
 
-### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscriptionItems") GetSubscriptionItems
+### <a name="get_subscription_items"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetSubscriptionItems") GetSubscriptionItems
 
 > Get Subscription Items
 
@@ -685,8 +685,8 @@ Task<Models.ListSubscriptionItemsResponse> GetSubscriptionItems(
 
 ```csharp
 string subscriptionId = "subscription_id";
-int? page = 179;
-int? size = 179;
+int? page = 218;
+int? size = 218;
 string name = "name";
 string code = "code";
 string status = "status";
@@ -699,7 +699,7 @@ Models.ListSubscriptionItemsResponse result = await subscriptions.GetSubscriptio
 ```
 
 
-### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionPaymentMethod") UpdateSubscriptionPaymentMethod
+### <a name="update_subscription_payment_method"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateSubscriptionPaymentMethod") UpdateSubscriptionPaymentMethod
 
 > Updates the payment method from a subscription
 
@@ -729,7 +729,7 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionPa
 ```
 
 
-### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscriptionItem") GetSubscriptionItem
+### <a name="get_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetSubscriptionItem") GetSubscriptionItem
 
 > Get Subscription Item
 
@@ -757,7 +757,7 @@ Models.GetSubscriptionItemResponse result = await subscriptions.GetSubscriptionI
 ```
 
 
-### <a name="get_subscriptions"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscriptions") GetSubscriptions
+### <a name="get_subscriptions"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetSubscriptions") GetSubscriptions
 
 > Gets all subscriptions
 
@@ -799,8 +799,8 @@ Task<Models.ListSubscriptionsResponse> GetSubscriptions(
 #### Example Usage
 
 ```csharp
-int? page = 179;
-int? size = 179;
+int? page = 218;
+int? size = 218;
 string code = "code";
 string billingType = "billing_type";
 string customerId = "customer_id";
@@ -817,7 +817,7 @@ Models.ListSubscriptionsResponse result = await subscriptions.GetSubscriptions(p
 ```
 
 
-### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CancelSubscription") CancelSubscription
+### <a name="cancel_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.CancelSubscription") CancelSubscription
 
 > Cancels a subscription
 
@@ -847,7 +847,7 @@ Models.GetSubscriptionResponse result = await subscriptions.CancelSubscription(s
 ```
 
 
-### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateIncrement") CreateIncrement
+### <a name="create_increment"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.CreateIncrement") CreateIncrement
 
 > Creates a increment
 
@@ -877,7 +877,7 @@ Models.GetIncrementResponse result = await subscriptions.CreateIncrement(subscri
 ```
 
 
-### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateUsage") CreateUsage
+### <a name="create_usage"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.CreateUsage") CreateUsage
 
 > Creates a usage
 
@@ -913,7 +913,7 @@ Models.GetUsageResponse result = await subscriptions.CreateUsage(subscriptionId,
 ```
 
 
-### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetDiscountById") GetDiscountById
+### <a name="get_discount_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetDiscountById") GetDiscountById
 
 > TODO: Add a method description
 
@@ -941,7 +941,7 @@ Models.GetDiscountResponse result = await subscriptions.GetDiscountById(subscrip
 ```
 
 
-### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateSubscription") CreateSubscription
+### <a name="create_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.CreateSubscription") CreateSubscription
 
 > Creates a new subscription
 
@@ -969,7 +969,7 @@ Models.GetSubscriptionResponse result = await subscriptions.CreateSubscription(b
 ```
 
 
-### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetIncrementById") GetIncrementById
+### <a name="get_increment_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetIncrementById") GetIncrementById
 
 > TODO: Add a method description
 
@@ -997,7 +997,7 @@ Models.GetIncrementResponse result = await subscriptions.GetIncrementById(subscr
 ```
 
 
-### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionAffiliationId") UpdateSubscriptionAffiliationId
+### <a name="update_subscription_affiliation_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateSubscriptionAffiliationId") UpdateSubscriptionAffiliationId
 
 > TODO: Add a method description
 
@@ -1027,7 +1027,7 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionAf
 ```
 
 
-### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionMetadata") UpdateSubscriptionMetadata
+### <a name="update_subscription_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateSubscriptionMetadata") UpdateSubscriptionMetadata
 
 > Updates the metadata from a subscription
 
@@ -1057,7 +1057,7 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionMe
 ```
 
 
-### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteIncrement") DeleteIncrement
+### <a name="delete_increment"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.DeleteIncrement") DeleteIncrement
 
 > Deletes a increment
 
@@ -1087,7 +1087,7 @@ Models.GetIncrementResponse result = await subscriptions.DeleteIncrement(subscri
 ```
 
 
-### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscriptionCycles") GetSubscriptionCycles
+### <a name="get_subscription_cycles"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetSubscriptionCycles") GetSubscriptionCycles
 
 > TODO: Add a method description
 
@@ -1117,7 +1117,7 @@ Models.ListCyclesResponse result = await subscriptions.GetSubscriptionCycles(sub
 ```
 
 
-### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetDiscounts") GetDiscounts
+### <a name="get_discounts"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetDiscounts") GetDiscounts
 
 > TODO: Add a method description
 
@@ -1139,15 +1139,15 @@ Task<Models.ListDiscountsResponse> GetDiscounts(string subscriptionId, int page,
 
 ```csharp
 string subscriptionId = "subscription_id";
-int page = 179;
-int size = 179;
+int page = 218;
+int size = 218;
 
 Models.ListDiscountsResponse result = await subscriptions.GetDiscounts(subscriptionId, page, size);
 
 ```
 
 
-### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionBillingDate") UpdateSubscriptionBillingDate
+### <a name="update_subscription_billing_date"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateSubscriptionBillingDate") UpdateSubscriptionBillingDate
 
 > Updates the billing date from a subscription
 
@@ -1177,7 +1177,7 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionBi
 ```
 
 
-### <a name="delete_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.DeleteSubscriptionItem") DeleteSubscriptionItem
+### <a name="delete_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.DeleteSubscriptionItem") DeleteSubscriptionItem
 
 > Deletes a subscription item
 
@@ -1207,7 +1207,7 @@ Models.GetSubscriptionItemResponse result = await subscriptions.DeleteSubscripti
 ```
 
 
-### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetIncrements") GetIncrements
+### <a name="get_increments"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetIncrements") GetIncrements
 
 > TODO: Add a method description
 
@@ -1229,15 +1229,15 @@ Task<Models.ListIncrementsResponse> GetIncrements(string subscriptionId, int? pa
 
 ```csharp
 string subscriptionId = "subscription_id";
-int? page = 179;
-int? size = 179;
+int? page = 218;
+int? size = 218;
 
 Models.ListIncrementsResponse result = await subscriptions.GetIncrements(subscriptionId, page, size);
 
 ```
 
 
-### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionDueDays") UpdateSubscriptionDueDays
+### <a name="update_subscription_due_days"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateSubscriptionDueDays") UpdateSubscriptionDueDays
 
 > Updates the boleto due days from a subscription
 
@@ -1267,7 +1267,7 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionDu
 ```
 
 
-### <a name="update_subscription_start_at"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionStartAt") UpdateSubscriptionStartAt
+### <a name="update_subscription_start_at"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateSubscriptionStartAt") UpdateSubscriptionStartAt
 
 > Updates the start at date from a subscription
 
@@ -1297,7 +1297,7 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionSt
 ```
 
 
-### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionItem") UpdateSubscriptionItem
+### <a name="update_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateSubscriptionItem") UpdateSubscriptionItem
 
 > Updates a subscription item
 
@@ -1333,7 +1333,7 @@ Models.GetSubscriptionItemResponse result = await subscriptions.UpdateSubscripti
 ```
 
 
-### <a name="create_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.CreateSubscriptionItem") CreateSubscriptionItem
+### <a name="create_subscription_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.CreateSubscriptionItem") CreateSubscriptionItem
 
 > Creates a new Subscription item
 
@@ -1363,7 +1363,7 @@ Models.GetSubscriptionItemResponse result = await subscriptions.CreateSubscripti
 ```
 
 
-### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscription") GetSubscription
+### <a name="get_subscription"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetSubscription") GetSubscription
 
 > Gets a subscription
 
@@ -1389,7 +1389,7 @@ Models.GetSubscriptionResponse result = await subscriptions.GetSubscription(subs
 ```
 
 
-### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetUsages") GetUsages
+### <a name="get_usages"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetUsages") GetUsages
 
 > Lists all usages from a subscription item
 
@@ -1425,8 +1425,8 @@ Task<Models.ListUsagesResponse> GetUsages(
 ```csharp
 string subscriptionId = "subscription_id";
 string itemId = "item_id";
-int? page = 179;
-int? size = 179;
+int? page = 54;
+int? size = 54;
 string code = "code";
 string mgroup = "group";
 DateTime? usedSince = DateTime.Now();
@@ -1437,7 +1437,7 @@ Models.ListUsagesResponse result = await subscriptions.GetUsages(subscriptionId,
 ```
 
 
-### <a name="update_latest_period_end_at"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateLatestPeriodEndAt") UpdateLatestPeriodEndAt
+### <a name="update_latest_period_end_at"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateLatestPeriodEndAt") UpdateLatestPeriodEndAt
 
 > TODO: Add a method description
 
@@ -1467,7 +1467,7 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateLatestPeriodEn
 ```
 
 
-### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.UpdateSubscriptionMiniumPrice") UpdateSubscriptionMiniumPrice
+### <a name="update_subscription_minium_price"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.UpdateSubscriptionMiniumPrice") UpdateSubscriptionMiniumPrice
 
 > Atualização do valor mínimo da assinatura
 
@@ -1497,7 +1497,7 @@ Models.GetSubscriptionResponse result = await subscriptions.UpdateSubscriptionMi
 ```
 
 
-### <a name="get_subscription_cycle_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetSubscriptionCycleById") GetSubscriptionCycleById
+### <a name="get_subscription_cycle_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetSubscriptionCycleById") GetSubscriptionCycleById
 
 > TODO: Add a method description
 
@@ -1525,7 +1525,7 @@ Models.GetPeriodResponse result = await subscriptions.GetSubscriptionCycleById(s
 ```
 
 
-### <a name="get_usage_report"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SubscriptionsController.GetUsageReport") GetUsageReport
+### <a name="get_usage_report"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SubscriptionsController.GetUsageReport") GetUsageReport
 
 > TODO: Add a method description
 
@@ -1555,7 +1555,7 @@ Models.GetUsageReportResponse result = await subscriptions.GetUsageReport(subscr
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="invoices_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.InvoicesController") InvoicesController
+## <a name="invoices_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.InvoicesController") InvoicesController
 
 ### Get singleton instance
 
@@ -1565,7 +1565,7 @@ The singleton instance of the ``` InvoicesController ``` class can be accessed f
 IInvoicesController invoices = client.Invoices;
 ```
 
-### <a name="update_invoice_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.UpdateInvoiceMetadata") UpdateInvoiceMetadata
+### <a name="update_invoice_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.InvoicesController.UpdateInvoiceMetadata") UpdateInvoiceMetadata
 
 > Updates the metadata from an invoice
 
@@ -1595,7 +1595,7 @@ Models.GetInvoiceResponse result = await invoices.UpdateInvoiceMetadata(invoiceI
 ```
 
 
-### <a name="get_partial_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.GetPartialInvoice") GetPartialInvoice
+### <a name="get_partial_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.InvoicesController.GetPartialInvoice") GetPartialInvoice
 
 > TODO: Add a method description
 
@@ -1621,7 +1621,7 @@ Models.GetInvoiceResponse result = await invoices.GetPartialInvoice(subscription
 ```
 
 
-### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.CancelInvoice") CancelInvoice
+### <a name="cancel_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.InvoicesController.CancelInvoice") CancelInvoice
 
 > Cancels an invoice
 
@@ -1649,7 +1649,7 @@ Models.GetInvoiceResponse result = await invoices.CancelInvoice(invoiceId, idemp
 ```
 
 
-### <a name="create_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.CreateInvoice") CreateInvoice
+### <a name="create_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.InvoicesController.CreateInvoice") CreateInvoice
 
 > Create an Invoice
 
@@ -1685,7 +1685,7 @@ Models.GetInvoiceResponse result = await invoices.CreateInvoice(subscriptionId, 
 ```
 
 
-### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.GetInvoices") GetInvoices
+### <a name="get_invoices"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.InvoicesController.GetInvoices") GetInvoices
 
 > Gets all invoices
 
@@ -1725,8 +1725,8 @@ Task<Models.ListInvoicesResponse> GetInvoices(
 #### Example Usage
 
 ```csharp
-int? page = 179;
-int? size = 179;
+int? page = 54;
+int? size = 54;
 string code = "code";
 string customerId = "customer_id";
 string subscriptionId = "subscription_id";
@@ -1742,7 +1742,7 @@ Models.ListInvoicesResponse result = await invoices.GetInvoices(page, size, code
 ```
 
 
-### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.GetInvoice") GetInvoice
+### <a name="get_invoice"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.InvoicesController.GetInvoice") GetInvoice
 
 > Gets an invoice
 
@@ -1768,7 +1768,7 @@ Models.GetInvoiceResponse result = await invoices.GetInvoice(invoiceId);
 ```
 
 
-### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.InvoicesController.UpdateInvoiceStatus") UpdateInvoiceStatus
+### <a name="update_invoice_status"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.InvoicesController.UpdateInvoiceStatus") UpdateInvoiceStatus
 
 > Updates the status from an invoice
 
@@ -1800,7 +1800,7 @@ Models.GetInvoiceResponse result = await invoices.UpdateInvoiceStatus(invoiceId,
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.OrdersController") OrdersController
+## <a name="orders_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.OrdersController") OrdersController
 
 ### Get singleton instance
 
@@ -1810,7 +1810,7 @@ The singleton instance of the ``` OrdersController ``` class can be accessed fro
 IOrdersController orders = client.Orders;
 ```
 
-### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.GetOrders") GetOrders
+### <a name="get_orders"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.GetOrders") GetOrders
 
 > Gets all orders
 
@@ -1842,8 +1842,8 @@ Task<Models.ListOrderResponse> GetOrders(
 #### Example Usage
 
 ```csharp
-int? page = 179;
-int? size = 179;
+int? page = 54;
+int? size = 54;
 string code = "code";
 string status = "status";
 DateTime? createdSince = DateTime.Now();
@@ -1855,7 +1855,7 @@ Models.ListOrderResponse result = await orders.GetOrders(page, size, code, statu
 ```
 
 
-### <a name="update_order_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.UpdateOrderItem") UpdateOrderItem
+### <a name="update_order_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.UpdateOrderItem") UpdateOrderItem
 
 > TODO: Add a method description
 
@@ -1891,7 +1891,7 @@ Models.GetOrderItemResponse result = await orders.UpdateOrderItem(orderId, itemI
 ```
 
 
-### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.DeleteAllOrderItems") DeleteAllOrderItems
+### <a name="delete_all_order_items"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.DeleteAllOrderItems") DeleteAllOrderItems
 
 > TODO: Add a method description
 
@@ -1919,7 +1919,7 @@ Models.GetOrderResponse result = await orders.DeleteAllOrderItems(orderId, idemp
 ```
 
 
-### <a name="delete_order_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.DeleteOrderItem") DeleteOrderItem
+### <a name="delete_order_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.DeleteOrderItem") DeleteOrderItem
 
 > TODO: Add a method description
 
@@ -1949,7 +1949,7 @@ Models.GetOrderItemResponse result = await orders.DeleteOrderItem(orderId, itemI
 ```
 
 
-### <a name="close_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.CloseOrder") CloseOrder
+### <a name="close_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.CloseOrder") CloseOrder
 
 > TODO: Add a method description
 
@@ -1979,7 +1979,7 @@ Models.GetOrderResponse result = await orders.CloseOrder(id, request, idempotenc
 ```
 
 
-### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.CreateOrder") CreateOrder
+### <a name="create_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.CreateOrder") CreateOrder
 
 > Creates a new Order
 
@@ -2007,7 +2007,7 @@ Models.GetOrderResponse result = await orders.CreateOrder(body, idempotencyKey);
 ```
 
 
-### <a name="create_order_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.CreateOrderItem") CreateOrderItem
+### <a name="create_order_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.CreateOrderItem") CreateOrderItem
 
 > TODO: Add a method description
 
@@ -2037,7 +2037,7 @@ Models.GetOrderItemResponse result = await orders.CreateOrderItem(orderId, reque
 ```
 
 
-### <a name="get_order_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.GetOrderItem") GetOrderItem
+### <a name="get_order_item"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.GetOrderItem") GetOrderItem
 
 > TODO: Add a method description
 
@@ -2065,7 +2065,7 @@ Models.GetOrderItemResponse result = await orders.GetOrderItem(orderId, itemId);
 ```
 
 
-### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.UpdateOrderMetadata") UpdateOrderMetadata
+### <a name="update_order_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.UpdateOrderMetadata") UpdateOrderMetadata
 
 > Updates the metadata from an order
 
@@ -2095,7 +2095,7 @@ Models.GetOrderResponse result = await orders.UpdateOrderMetadata(orderId, reque
 ```
 
 
-### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.OrdersController.GetOrder") GetOrder
+### <a name="get_order"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.OrdersController.GetOrder") GetOrder
 
 > Gets an order
 
@@ -2123,7 +2123,7 @@ Models.GetOrderResponse result = await orders.GetOrder(orderId);
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="customers_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.CustomersController") CustomersController
+## <a name="customers_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.CustomersController") CustomersController
 
 ### Get singleton instance
 
@@ -2133,7 +2133,7 @@ The singleton instance of the ``` CustomersController ``` class can be accessed 
 ICustomersController customers = client.Customers;
 ```
 
-### <a name="update_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.UpdateCard") UpdateCard
+### <a name="update_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.UpdateCard") UpdateCard
 
 > Updates a card
 
@@ -2169,7 +2169,7 @@ Models.GetCardResponse result = await customers.UpdateCard(customerId, cardId, r
 ```
 
 
-### <a name="update_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.UpdateAddress") UpdateAddress
+### <a name="update_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.UpdateAddress") UpdateAddress
 
 > Updates an address
 
@@ -2205,7 +2205,7 @@ Models.GetAddressResponse result = await customers.UpdateAddress(customerId, add
 ```
 
 
-### <a name="delete_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteAccessToken") DeleteAccessToken
+### <a name="delete_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.DeleteAccessToken") DeleteAccessToken
 
 > Delete a customer's access token
 
@@ -2235,7 +2235,7 @@ Models.GetAccessTokenResponse result = await customers.DeleteAccessToken(custome
 ```
 
 
-### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.CreateCustomer") CreateCustomer
+### <a name="create_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.CreateCustomer") CreateCustomer
 
 > Creates a new customer
 
@@ -2263,7 +2263,7 @@ Models.GetCustomerResponse result = await customers.CreateCustomer(request, idem
 ```
 
 
-### <a name="create_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.CreateAddress") CreateAddress
+### <a name="create_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.CreateAddress") CreateAddress
 
 > Creates a new address for a customer
 
@@ -2293,7 +2293,7 @@ Models.GetAddressResponse result = await customers.CreateAddress(customerId, req
 ```
 
 
-### <a name="delete_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteAccessTokens") DeleteAccessTokens
+### <a name="delete_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.DeleteAccessTokens") DeleteAccessTokens
 
 > Delete a Customer's access tokens
 
@@ -2319,7 +2319,7 @@ Models.ListAccessTokensResponse result = await customers.DeleteAccessTokens(cust
 ```
 
 
-### <a name="get_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAddress") GetAddress
+### <a name="get_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.GetAddress") GetAddress
 
 > Get a customer's address
 
@@ -2347,7 +2347,7 @@ Models.GetAddressResponse result = await customers.GetAddress(customerId, addres
 ```
 
 
-### <a name="delete_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteAddress") DeleteAddress
+### <a name="delete_address"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.DeleteAddress") DeleteAddress
 
 > Delete a Customer's address
 
@@ -2377,7 +2377,7 @@ Models.GetAddressResponse result = await customers.DeleteAddress(customerId, add
 ```
 
 
-### <a name="create_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.CreateCard") CreateCard
+### <a name="create_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.CreateCard") CreateCard
 
 > Creates a new card for a customer
 
@@ -2407,7 +2407,7 @@ Models.GetCardResponse result = await customers.CreateCard(customerId, request, 
 ```
 
 
-### <a name="get_customers"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCustomers") GetCustomers
+### <a name="get_customers"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.GetCustomers") GetCustomers
 
 > Get all Customers
 
@@ -2449,7 +2449,7 @@ Models.ListCustomersResponse result = await customers.GetCustomers(name, documen
 ```
 
 
-### <a name="update_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.UpdateCustomer") UpdateCustomer
+### <a name="update_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.UpdateCustomer") UpdateCustomer
 
 > Updates a customer
 
@@ -2479,7 +2479,7 @@ Models.GetCustomerResponse result = await customers.UpdateCustomer(customerId, r
 ```
 
 
-### <a name="create_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.CreateAccessToken") CreateAccessToken
+### <a name="create_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.CreateAccessToken") CreateAccessToken
 
 > Creates a access token for a customer
 
@@ -2509,7 +2509,7 @@ Models.GetAccessTokenResponse result = await customers.CreateAccessToken(custome
 ```
 
 
-### <a name="get_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAccessTokens") GetAccessTokens
+### <a name="get_access_tokens"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.GetAccessTokens") GetAccessTokens
 
 > Get all access tokens from a customer
 
@@ -2531,15 +2531,15 @@ Task<Models.ListAccessTokensResponse> GetAccessTokens(string customerId, int? pa
 
 ```csharp
 string customerId = "customer_id";
-int? page = 15;
-int? size = 15;
+int? page = 54;
+int? size = 54;
 
 Models.ListAccessTokensResponse result = await customers.GetAccessTokens(customerId, page, size);
 
 ```
 
 
-### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCards") GetCards
+### <a name="get_cards"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.GetCards") GetCards
 
 > Get all cards from a customer
 
@@ -2561,15 +2561,15 @@ Task<Models.ListCardsResponse> GetCards(string customerId, int? page = null, int
 
 ```csharp
 string customerId = "customer_id";
-int? page = 15;
-int? size = 15;
+int? page = 54;
+int? size = 54;
 
 Models.ListCardsResponse result = await customers.GetCards(customerId, page, size);
 
 ```
 
 
-### <a name="renew_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.RenewCard") RenewCard
+### <a name="renew_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.RenewCard") RenewCard
 
 > Renew a card
 
@@ -2599,7 +2599,7 @@ Models.GetCardResponse result = await customers.RenewCard(customerId, cardId, id
 ```
 
 
-### <a name="get_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAccessToken") GetAccessToken
+### <a name="get_access_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.GetAccessToken") GetAccessToken
 
 > Get a Customer's access token
 
@@ -2627,7 +2627,7 @@ Models.GetAccessTokenResponse result = await customers.GetAccessToken(customerId
 ```
 
 
-### <a name="update_customer_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.UpdateCustomerMetadata") UpdateCustomerMetadata
+### <a name="update_customer_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.UpdateCustomerMetadata") UpdateCustomerMetadata
 
 > Updates the metadata a customer
 
@@ -2657,7 +2657,7 @@ Models.GetCustomerResponse result = await customers.UpdateCustomerMetadata(custo
 ```
 
 
-### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.DeleteCard") DeleteCard
+### <a name="delete_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.DeleteCard") DeleteCard
 
 > Delete a customer's card
 
@@ -2687,7 +2687,7 @@ Models.GetCardResponse result = await customers.DeleteCard(customerId, cardId, i
 ```
 
 
-### <a name="get_addresses"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetAddresses") GetAddresses
+### <a name="get_addresses"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.GetAddresses") GetAddresses
 
 > Gets all adressess from a customer
 
@@ -2709,15 +2709,15 @@ Task<Models.ListAddressesResponse> GetAddresses(string customerId, int? page = n
 
 ```csharp
 string customerId = "customer_id";
-int? page = 15;
-int? size = 15;
+int? page = 54;
+int? size = 54;
 
 Models.ListAddressesResponse result = await customers.GetAddresses(customerId, page, size);
 
 ```
 
 
-### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCustomer") GetCustomer
+### <a name="get_customer"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.GetCustomer") GetCustomer
 
 > Get a customer
 
@@ -2743,7 +2743,7 @@ Models.GetCustomerResponse result = await customers.GetCustomer(customerId);
 ```
 
 
-### <a name="get_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.CustomersController.GetCard") GetCard
+### <a name="get_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.CustomersController.GetCard") GetCard
 
 > Get a customer's card
 
@@ -2773,7 +2773,7 @@ Models.GetCardResponse result = await customers.GetCard(customerId, cardId);
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="recipients_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.RecipientsController") RecipientsController
+## <a name="recipients_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.RecipientsController") RecipientsController
 
 ### Get singleton instance
 
@@ -2783,7 +2783,7 @@ The singleton instance of the ``` RecipientsController ``` class can be accessed
 IRecipientsController recipients = client.Recipients;
 ```
 
-### <a name="update_recipient"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipient") UpdateRecipient
+### <a name="update_recipient"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.UpdateRecipient") UpdateRecipient
 
 > Updates a recipient
 
@@ -2813,7 +2813,7 @@ Models.GetRecipientResponse result = await recipients.UpdateRecipient(recipientI
 ```
 
 
-### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.CreateAnticipation") CreateAnticipation
+### <a name="create_anticipation"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.CreateAnticipation") CreateAnticipation
 
 > Creates an anticipation
 
@@ -2843,7 +2843,7 @@ Models.GetAnticipationResponse result = await recipients.CreateAnticipation(reci
 ```
 
 
-### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetAnticipationLimits") GetAnticipationLimits
+### <a name="get_anticipation_limits"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetAnticipationLimits") GetAnticipationLimits
 
 > Gets the anticipation limits for a recipient
 
@@ -2873,7 +2873,7 @@ Models.GetAnticipationLimitResponse result = await recipients.GetAnticipationLim
 ```
 
 
-### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetRecipients") GetRecipients
+### <a name="get_recipients"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetRecipients") GetRecipients
 
 > Retrieves paginated recipients information
 
@@ -2893,15 +2893,15 @@ Task<Models.ListRecipientResponse> GetRecipients(int? page = null, int? size = n
 #### Example Usage
 
 ```csharp
-int? page = 15;
-int? size = 15;
+int? page = 54;
+int? size = 54;
 
 Models.ListRecipientResponse result = await recipients.GetRecipients(page, size);
 
 ```
 
 
-### <a name="get_withdraw_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetWithdrawById") GetWithdrawById
+### <a name="get_withdraw_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetWithdrawById") GetWithdrawById
 
 > TODO: Add a method description
 
@@ -2929,7 +2929,7 @@ Models.GetWithdrawResponse result = await recipients.GetWithdrawById(recipientId
 ```
 
 
-### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipientDefaultBankAccount") UpdateRecipientDefaultBankAccount
+### <a name="update_recipient_default_bank_account"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.UpdateRecipientDefaultBankAccount") UpdateRecipientDefaultBankAccount
 
 > Updates the default bank account from a recipient
 
@@ -2959,7 +2959,7 @@ Models.GetRecipientResponse result = await recipients.UpdateRecipientDefaultBank
 ```
 
 
-### <a name="update_recipient_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipientMetadata") UpdateRecipientMetadata
+### <a name="update_recipient_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.UpdateRecipientMetadata") UpdateRecipientMetadata
 
 > Updates recipient metadata
 
@@ -2989,7 +2989,7 @@ Models.GetRecipientResponse result = await recipients.UpdateRecipientMetadata(re
 ```
 
 
-### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetTransfers") GetTransfers
+### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetTransfers") GetTransfers
 
 > Gets a paginated list of transfers for the recipient
 
@@ -3020,8 +3020,8 @@ Task<Models.ListTransferResponse> GetTransfers(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 15;
-int? size = 15;
+int? page = 54;
+int? size = 54;
 string status = "status";
 DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
@@ -3031,7 +3031,7 @@ Models.ListTransferResponse result = await recipients.GetTransfers(recipientId, 
 ```
 
 
-### <a name="get_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetTransfer") GetTransfer
+### <a name="get_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetTransfer") GetTransfer
 
 > Gets a transfer
 
@@ -3059,7 +3059,7 @@ Models.GetTransferResponse result = await recipients.GetTransfer(recipientId, tr
 ```
 
 
-### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.CreateWithdraw") CreateWithdraw
+### <a name="create_withdraw"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.CreateWithdraw") CreateWithdraw
 
 > TODO: Add a method description
 
@@ -3087,7 +3087,7 @@ Models.GetWithdrawResponse result = await recipients.CreateWithdraw(recipientId,
 ```
 
 
-### <a name="update_automatic_anticipation_settings"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateAutomaticAnticipationSettings") UpdateAutomaticAnticipationSettings
+### <a name="update_automatic_anticipation_settings"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.UpdateAutomaticAnticipationSettings") UpdateAutomaticAnticipationSettings
 
 > Updates recipient metadata
 
@@ -3117,7 +3117,7 @@ Models.GetRecipientResponse result = await recipients.UpdateAutomaticAnticipatio
 ```
 
 
-### <a name="get_anticipation"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetAnticipation") GetAnticipation
+### <a name="get_anticipation"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetAnticipation") GetAnticipation
 
 > Gets an anticipation
 
@@ -3145,7 +3145,7 @@ Models.GetAnticipationResponse result = await recipients.GetAnticipation(recipie
 ```
 
 
-### <a name="update_recipient_transfer_settings"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.UpdateRecipientTransferSettings") UpdateRecipientTransferSettings
+### <a name="update_recipient_transfer_settings"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.UpdateRecipientTransferSettings") UpdateRecipientTransferSettings
 
 > TODO: Add a method description
 
@@ -3175,7 +3175,7 @@ Models.GetRecipientResponse result = await recipients.UpdateRecipientTransferSet
 ```
 
 
-### <a name="get_anticipations"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetAnticipations") GetAnticipations
+### <a name="get_anticipations"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetAnticipations") GetAnticipations
 
 > Retrieves a paginated list of anticipations from a recipient
 
@@ -3212,8 +3212,8 @@ Task<Models.ListAnticipationResponse> GetAnticipations(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 15;
-int? size = 15;
+int? page = 54;
+int? size = 54;
 string status = "status";
 string timeframe = "timeframe";
 DateTime? paymentDateSince = DateTime.Now();
@@ -3226,7 +3226,7 @@ Models.ListAnticipationResponse result = await recipients.GetAnticipations(recip
 ```
 
 
-### <a name="get_recipient"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetRecipient") GetRecipient
+### <a name="get_recipient"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetRecipient") GetRecipient
 
 > Retrieves recipient information
 
@@ -3252,7 +3252,7 @@ Models.GetRecipientResponse result = await recipients.GetRecipient(recipientId);
 ```
 
 
-### <a name="get_balance"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetBalance") GetBalance
+### <a name="get_balance"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetBalance") GetBalance
 
 > Get balance information for a recipient
 
@@ -3278,7 +3278,7 @@ Models.GetBalanceResponse result = await recipients.GetBalance(recipientId);
 ```
 
 
-### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetWithdrawals") GetWithdrawals
+### <a name="get_withdrawals"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetWithdrawals") GetWithdrawals
 
 > Gets a paginated list of transfers for the recipient
 
@@ -3309,8 +3309,8 @@ Task<Models.ListWithdrawals> GetWithdrawals(
 
 ```csharp
 string recipientId = "recipient_id";
-int? page = 15;
-int? size = 15;
+int? page = 54;
+int? size = 54;
 string status = "status";
 DateTime? createdSince = DateTime.Now();
 DateTime? createdUntil = DateTime.Now();
@@ -3320,7 +3320,7 @@ Models.ListWithdrawals result = await recipients.GetWithdrawals(recipientId, pag
 ```
 
 
-### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.CreateTransfer") CreateTransfer
+### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.CreateTransfer") CreateTransfer
 
 > Creates a transfer for a recipient
 
@@ -3350,7 +3350,7 @@ Models.GetTransferResponse result = await recipients.CreateTransfer(recipientId,
 ```
 
 
-### <a name="create_recipient"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.CreateRecipient") CreateRecipient
+### <a name="create_recipient"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.CreateRecipient") CreateRecipient
 
 > Creates a new recipient
 
@@ -3378,7 +3378,7 @@ Models.GetRecipientResponse result = await recipients.CreateRecipient(request, i
 ```
 
 
-### <a name="get_recipient_by_code"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.RecipientsController.GetRecipientByCode") GetRecipientByCode
+### <a name="get_recipient_by_code"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.RecipientsController.GetRecipientByCode") GetRecipientByCode
 
 > Retrieves recipient information
 
@@ -3406,7 +3406,7 @@ Models.GetRecipientResponse result = await recipients.GetRecipientByCode(code);
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="charges_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.ChargesController") ChargesController
+## <a name="charges_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.ChargesController") ChargesController
 
 ### Get singleton instance
 
@@ -3416,7 +3416,7 @@ The singleton instance of the ``` ChargesController ``` class can be accessed fr
 IChargesController charges = client.Charges;
 ```
 
-### <a name="update_charge_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargeMetadata") UpdateChargeMetadata
+### <a name="update_charge_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.UpdateChargeMetadata") UpdateChargeMetadata
 
 > Updates the metadata from a charge
 
@@ -3446,7 +3446,7 @@ Models.GetChargeResponse result = await charges.UpdateChargeMetadata(chargeId, r
 ```
 
 
-### <a name="update_charge_payment_method"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargePaymentMethod") UpdateChargePaymentMethod
+### <a name="update_charge_payment_method"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.UpdateChargePaymentMethod") UpdateChargePaymentMethod
 
 > Updates a charge's payment method
 
@@ -3476,7 +3476,7 @@ Models.GetChargeResponse result = await charges.UpdateChargePaymentMethod(charge
 ```
 
 
-### <a name="get_charge_transactions"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetChargeTransactions") GetChargeTransactions
+### <a name="get_charge_transactions"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.GetChargeTransactions") GetChargeTransactions
 
 > TODO: Add a method description
 
@@ -3498,15 +3498,15 @@ Task<Models.ListChargeTransactionsResponse> GetChargeTransactions(string chargeI
 
 ```csharp
 string chargeId = "charge_id";
-int? page = 15;
-int? size = 15;
+int? page = 54;
+int? size = 54;
 
 Models.ListChargeTransactionsResponse result = await charges.GetChargeTransactions(chargeId, page, size);
 
 ```
 
 
-### <a name="update_charge_due_date"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargeDueDate") UpdateChargeDueDate
+### <a name="update_charge_due_date"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.UpdateChargeDueDate") UpdateChargeDueDate
 
 > Updates the due date from a charge
 
@@ -3536,7 +3536,7 @@ Models.GetChargeResponse result = await charges.UpdateChargeDueDate(chargeId, re
 ```
 
 
-### <a name="get_charges"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetCharges") GetCharges
+### <a name="get_charges"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.GetCharges") GetCharges
 
 > Lists all charges
 
@@ -3572,8 +3572,8 @@ Task<Models.ListChargesResponse> GetCharges(
 #### Example Usage
 
 ```csharp
-int? page = 15;
-int? size = 15;
+int? page = 54;
+int? size = 54;
 string code = "code";
 string status = "status";
 string paymentMethod = "payment_method";
@@ -3587,7 +3587,7 @@ Models.ListChargesResponse result = await charges.GetCharges(page, size, code, s
 ```
 
 
-### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.CaptureCharge") CaptureCharge
+### <a name="capture_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.CaptureCharge") CaptureCharge
 
 > Captures a charge
 
@@ -3617,7 +3617,7 @@ Models.GetChargeResponse result = await charges.CaptureCharge(chargeId, request,
 ```
 
 
-### <a name="update_charge_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.UpdateChargeCard") UpdateChargeCard
+### <a name="update_charge_card"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.UpdateChargeCard") UpdateChargeCard
 
 > Updates the card from a charge
 
@@ -3647,7 +3647,7 @@ Models.GetChargeResponse result = await charges.UpdateChargeCard(chargeId, reque
 ```
 
 
-### <a name="get_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetCharge") GetCharge
+### <a name="get_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.GetCharge") GetCharge
 
 > Get a charge from its id
 
@@ -3673,7 +3673,7 @@ Models.GetChargeResponse result = await charges.GetCharge(chargeId);
 ```
 
 
-### <a name="get_charges_summary"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.GetChargesSummary") GetChargesSummary
+### <a name="get_charges_summary"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.GetChargesSummary") GetChargesSummary
 
 > TODO: Add a method description
 
@@ -3703,7 +3703,7 @@ Models.GetChargesSummaryResponse result = await charges.GetChargesSummary(status
 ```
 
 
-### <a name="retry_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.RetryCharge") RetryCharge
+### <a name="retry_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.RetryCharge") RetryCharge
 
 > Retries a charge
 
@@ -3731,7 +3731,7 @@ Models.GetChargeResponse result = await charges.RetryCharge(chargeId, idempotenc
 ```
 
 
-### <a name="cancel_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.CancelCharge") CancelCharge
+### <a name="cancel_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.CancelCharge") CancelCharge
 
 > Cancel a charge
 
@@ -3761,7 +3761,7 @@ Models.GetChargeResponse result = await charges.CancelCharge(chargeId, request, 
 ```
 
 
-### <a name="create_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.CreateCharge") CreateCharge
+### <a name="create_charge"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.CreateCharge") CreateCharge
 
 > Creates a new charge
 
@@ -3789,7 +3789,7 @@ Models.GetChargeResponse result = await charges.CreateCharge(request, idempotenc
 ```
 
 
-### <a name="confirm_payment"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.ChargesController.ConfirmPayment") ConfirmPayment
+### <a name="confirm_payment"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.ChargesController.ConfirmPayment") ConfirmPayment
 
 > TODO: Add a method description
 
@@ -3821,7 +3821,7 @@ Models.GetChargeResponse result = await charges.ConfirmPayment(chargeId, request
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.TransfersController") TransfersController
+## <a name="transfers_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.TransfersController") TransfersController
 
 ### Get singleton instance
 
@@ -3831,7 +3831,7 @@ The singleton instance of the ``` TransfersController ``` class can be accessed 
 ITransfersController transfers = client.Transfers;
 ```
 
-### <a name="get_transfer_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransfersController.GetTransferById") GetTransferById
+### <a name="get_transfer_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.TransfersController.GetTransferById") GetTransferById
 
 > TODO: Add a method description
 
@@ -3857,7 +3857,7 @@ Models.GetTransfer result = await transfers.GetTransferById(transferId);
 ```
 
 
-### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransfersController.CreateTransfer") CreateTransfer
+### <a name="create_transfer"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.TransfersController.CreateTransfer") CreateTransfer
 
 > TODO: Add a method description
 
@@ -3883,7 +3883,7 @@ Models.GetTransfer result = await transfers.CreateTransfer(request);
 ```
 
 
-### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransfersController.GetTransfers") GetTransfers
+### <a name="get_transfers"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.TransfersController.GetTransfers") GetTransfers
 
 > Gets all transfers
 
@@ -3903,7 +3903,7 @@ Models.ListTransfers result = await transfers.GetTransfers();
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="tokens_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.TokensController") TokensController
+## <a name="tokens_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.TokensController") TokensController
 
 ### Get singleton instance
 
@@ -3913,7 +3913,7 @@ The singleton instance of the ``` TokensController ``` class can be accessed fro
 ITokensController tokens = client.Tokens;
 ```
 
-### <a name="create_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TokensController.CreateToken") CreateToken
+### <a name="create_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.TokensController.CreateToken") CreateToken
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -3945,7 +3945,7 @@ Models.GetTokenResponse result = await tokens.CreateToken(publicKey, request, id
 ```
 
 
-### <a name="get_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TokensController.GetToken") GetToken
+### <a name="get_token"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.TokensController.GetToken") GetToken
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -3977,7 +3977,7 @@ Models.GetTokenResponse result = await tokens.GetToken(id, publicKey);
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="sellers_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.SellersController") SellersController
+## <a name="sellers_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.SellersController") SellersController
 
 ### Get singleton instance
 
@@ -3987,7 +3987,7 @@ The singleton instance of the ``` SellersController ``` class can be accessed fr
 ISellersController sellers = client.Sellers;
 ```
 
-### <a name="create_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.CreateSeller") CreateSeller
+### <a name="create_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SellersController.CreateSeller") CreateSeller
 
 > TODO: Add a method description
 
@@ -4015,7 +4015,7 @@ Models.GetSellerResponse result = await sellers.CreateSeller(request, idempotenc
 ```
 
 
-### <a name="update_seller_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.UpdateSellerMetadata") UpdateSellerMetadata
+### <a name="update_seller_metadata"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SellersController.UpdateSellerMetadata") UpdateSellerMetadata
 
 > TODO: Add a method description
 
@@ -4045,7 +4045,7 @@ Models.GetSellerResponse result = await sellers.UpdateSellerMetadata(sellerId, r
 ```
 
 
-### <a name="update_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.UpdateSeller") UpdateSeller
+### <a name="update_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SellersController.UpdateSeller") UpdateSeller
 
 > TODO: Add a method description
 
@@ -4075,7 +4075,7 @@ Models.GetSellerResponse result = await sellers.UpdateSeller(id, request, idempo
 ```
 
 
-### <a name="delete_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.DeleteSeller") DeleteSeller
+### <a name="delete_seller"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SellersController.DeleteSeller") DeleteSeller
 
 > TODO: Add a method description
 
@@ -4103,7 +4103,7 @@ Models.GetSellerResponse result = await sellers.DeleteSeller(sellerId, idempoten
 ```
 
 
-### <a name="get_seller_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.GetSellerById") GetSellerById
+### <a name="get_seller_by_id"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SellersController.GetSellerById") GetSellerById
 
 > TODO: Add a method description
 
@@ -4129,7 +4129,7 @@ Models.GetSellerResponse result = await sellers.GetSellerById(id);
 ```
 
 
-### <a name="get_sellers"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.SellersController.GetSellers") GetSellers
+### <a name="get_sellers"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.SellersController.GetSellers") GetSellers
 
 > TODO: Add a method description
 
@@ -4165,8 +4165,8 @@ Task<Models.ListSellerResponse> GetSellers(
 #### Example Usage
 
 ```csharp
-int? page = 15;
-int? size = 15;
+int? page = 12;
+int? size = 12;
 string name = "name";
 string document = "document";
 string code = "code";
@@ -4182,7 +4182,7 @@ Models.ListSellerResponse result = await sellers.GetSellers(page, size, name, do
 
 [Back to List of Controllers](#list_of_controllers)
 
-## <a name="transactions_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarmeCoreApi.Standard.Controllers.TransactionsController") TransactionsController
+## <a name="transactions_controller"></a>![Class: ](https://apidocs.io/img/class.png "PagarMe.Standard.Controllers.TransactionsController") TransactionsController
 
 ### Get singleton instance
 
@@ -4192,7 +4192,7 @@ The singleton instance of the ``` TransactionsController ``` class can be access
 ITransactionsController transactions = client.Transactions;
 ```
 
-### <a name="get_transaction"></a>![Method: ](https://apidocs.io/img/method.png "PagarmeCoreApi.Standard.Controllers.TransactionsController.GetTransaction") GetTransaction
+### <a name="get_transaction"></a>![Method: ](https://apidocs.io/img/method.png "PagarMe.Standard.Controllers.TransactionsController.GetTransaction") GetTransaction
 
 > TODO: Add a method description
 
