@@ -22,24 +22,19 @@ namespace PagarmeCoreApi.Standard
         ISubscriptionsController Subscriptions { get;}
 
         /// <summary>
-        /// Singleton access to Invoices controller
-        /// </summary>
-        IInvoicesController Invoices { get;}
-
-        /// <summary>
         /// Singleton access to Orders controller
         /// </summary>
         IOrdersController Orders { get;}
 
         /// <summary>
+        /// Singleton access to Invoices controller
+        /// </summary>
+        IInvoicesController Invoices { get;}
+
+        /// <summary>
         /// Singleton access to Customers controller
         /// </summary>
         ICustomersController Customers { get;}
-
-        /// <summary>
-        /// Singleton access to Recipients controller
-        /// </summary>
-        IRecipientsController Recipients { get;}
 
         /// <summary>
         /// Singleton access to Charges controller
@@ -50,6 +45,11 @@ namespace PagarmeCoreApi.Standard
         /// Singleton access to Transfers controller
         /// </summary>
         ITransfersController Transfers { get;}
+
+        /// <summary>
+        /// Singleton access to Recipients controller
+        /// </summary>
+        IRecipientsController Recipients { get;}
 
         /// <summary>
         /// Singleton access to Tokens controller
