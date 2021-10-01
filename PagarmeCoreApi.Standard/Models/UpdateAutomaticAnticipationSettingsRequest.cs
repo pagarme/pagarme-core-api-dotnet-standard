@@ -105,7 +105,7 @@ namespace PagarmeCoreApi.Standard.Models
             {
                 return this.days; 
             } 
-            private set 
+            set 
             {
                 this.days = value;
                 onPropertyChanged("Days");
