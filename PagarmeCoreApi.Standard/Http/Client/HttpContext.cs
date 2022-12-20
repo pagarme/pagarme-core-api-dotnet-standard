@@ -1,32 +1,42 @@
-using PagarmeCoreApi.Standard.Http.Request;
-using PagarmeCoreApi.Standard.Http.Response;
-
+// <copyright file="HttpContext.cs" company="APIMatic">
+// Copyright (c) APIMatic. All rights reserved.
+// </copyright>
 namespace PagarmeCoreApi.Standard.Http.Client
 {
+    using PagarmeCoreApi.Standard.Http.Request;
+    using PagarmeCoreApi.Standard.Http.Response;
+
     /// <summary>
-    /// Represents the contextual information of HTTP request and response
+    /// Represents the contextual information of HTTP request and response.
     /// </summary>
-    public class HttpContext
+    public sealed class HttpContext
     {
         /// <summary>
-        /// The http request in the current context
+        /// Initializes a new instance of the <see cref="HttpContext"/> class.
         /// </summary>
-        public HttpRequest Request { get; set; }
-
-        /// <summary>
-        /// The http response in the current context
-        /// </summary>
-        public HttpResponse Response { get; set; }
-
-        /// <summary>
-        /// Constructor to initialize the context with http request and response information
-        /// </summary>
-        /// <param name="request">The http request in the current context</param>
-        /// <param name="response">The http response in the current context</param>
+        /// <param name="request">The http request in the current context.</param>
+        /// <param name="response">The http response in the current context.</param>
         public HttpContext(HttpRequest request, HttpResponse response)
         {
-            Request = request;
-            Response = response;
+            this.Request = request;
+            this.Response = response;
+        }
+
+        /// <summary>
+        /// Gets the http request in the current context.
+        /// </summary>
+        public HttpRequest Request { get; }
+
+        /// <summary>
+        /// Gets the http response in the current context.
+        /// </summary>
+        public HttpResponse Response { get; }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            return $" Request = {this.Request}, " +
+                $" Response = {this.Response}";
         }
     }
 }

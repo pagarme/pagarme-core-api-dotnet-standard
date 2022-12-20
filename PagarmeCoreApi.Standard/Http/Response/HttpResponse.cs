@@ -1,24 +1,52 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-
+// <copyright file="HttpResponse.cs" company="APIMatic">
+// Copyright (c) APIMatic. All rights reserved.
+// </copyright>
 namespace PagarmeCoreApi.Standard.Http.Response
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using PagarmeCoreApi.Standard.Utilities;
+
+    /// <summary>
+    /// HttpResponse stores necessary information about the http response.
+    /// </summary>
     public class HttpResponse
     {
         /// <summary>
-        /// HTTP Status code of the http response
+        /// Initializes a new instance of the <see cref="HttpResponse"/> class.
         /// </summary>
-        public int StatusCode { get; set; }
+        /// <param name="statusCode">statusCode.</param>
+        /// <param name="headers">headers.</param>
+        /// <param name="rawBody">rawBody.</param>
+        public HttpResponse(int statusCode, Dictionary<string, string> headers, Stream rawBody)
+        {
+            this.StatusCode = statusCode;
+            this.Headers = headers;
+            this.RawBody = rawBody;
+        }
 
         /// <summary>
-        /// Headers of the http response
+        /// Gets the HTTP Status code of the http response.
         /// </summary>
-        public Dictionary<string,string> Headers { get; set; }
+        public int StatusCode { get; }
 
         /// <summary>
-        /// Stream of the body
+        /// Gets the headers of the http response.
         /// </summary>
-        public Stream RawBody { get; set; }
+        public Dictionary<string, string> Headers { get; }
+
+        /// <summary>
+        /// Gets the stream of the body.
+        /// </summary>
+        public Stream RawBody { get; }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            return $" StatusCode = {this.StatusCode}, " +
+                $" Headers = {ApiHelper.JsonSerialize(this.Headers)}, " +
+                $" RawBody = {this.RawBody}";
+        }
     }
 }
