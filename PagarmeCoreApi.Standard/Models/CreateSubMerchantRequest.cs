@@ -133,7 +133,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// Phone
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("phone")]
         public Models.CreatePhoneRequest Phone 
@@ -150,7 +150,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// Address
+        /// Request for creating a new Address
         /// </summary>
         [JsonProperty("address")]
         public Models.CreateAddressRequest Address 

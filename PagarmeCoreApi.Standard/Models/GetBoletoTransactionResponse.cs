@@ -142,7 +142,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Response object for getting a billing address
         /// </summary>
         [JsonProperty("billing_address")]
         public Models.GetBillingAddressResponse BillingAddress 

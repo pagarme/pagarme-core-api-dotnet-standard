@@ -246,7 +246,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Response object for getting a customer
         /// </summary>
         [JsonProperty("customer")]
         public Models.GetCustomerResponse Customer 

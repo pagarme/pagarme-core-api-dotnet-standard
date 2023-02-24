@@ -115,7 +115,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Pix payer data.
         /// </summary>
         [JsonProperty("payer")]
         public Models.GetPixPayerResponse Payer 
