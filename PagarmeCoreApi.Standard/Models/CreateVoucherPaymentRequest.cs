@@ -79,7 +79,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// Card info
+        /// Card data
         /// </summary>
         [JsonProperty("Card")]
         public Models.CreateCardRequest Card 

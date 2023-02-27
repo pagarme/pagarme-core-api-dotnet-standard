@@ -123,7 +123,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// TODO: Write general description for this method
+        /// Response object for getting a pricing scheme
         /// </summary>
         [JsonProperty("pricing_scheme")]
         public Models.GetPricingSchemeResponse PricingScheme 

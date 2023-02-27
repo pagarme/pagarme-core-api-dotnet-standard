@@ -83,7 +83,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// Customer data
+        /// Request for creating a new customer
         /// </summary>
         [JsonProperty("customer")]
         public Models.CreateCustomerRequest Customer 

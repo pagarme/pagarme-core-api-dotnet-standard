@@ -188,7 +188,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// The Subscription Item
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("subscription_item")]
         public Models.GetSubscriptionItemResponse SubscriptionItem 

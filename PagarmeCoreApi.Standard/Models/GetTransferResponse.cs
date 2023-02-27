@@ -117,7 +117,7 @@ namespace PagarmeCoreApi.Standard.Models
         }
 
         /// <summary>
-        /// Bank account
+        /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("bank_account")]
         public Models.GetBankAccountResponse BankAccount 
