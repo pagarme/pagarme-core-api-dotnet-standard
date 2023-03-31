@@ -32,7 +32,6 @@ namespace PagarmeCoreApi.Standard.Models
         private string acquirerMessage;
         private string acquirerReturnCode;
         private int? installments;
-        private string fundingSource;
 
         /// <summary>
         /// Text that will appear on the credit card's statement
@@ -218,23 +217,6 @@ namespace PagarmeCoreApi.Standard.Models
             {
                 this.installments = value;
                 onPropertyChanged("Installments");
-            }
-        }
-
-        /// <summary>
-        /// Identify when a card is prepaid, credit or debit.
-        /// </summary>
-        [JsonProperty("funding_source")]
-        public string FundingSource 
-        { 
-            get 
-            {
-                return this.fundingSource; 
-            } 
-            set 
-            {
-                this.fundingSource = value;
-                onPropertyChanged("FundingSource");
             }
         }
     }
