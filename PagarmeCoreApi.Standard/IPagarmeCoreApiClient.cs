@@ -52,14 +52,14 @@ namespace PagarmeCoreApi.Standard
         ITokensController Tokens { get;}
 
         /// <summary>
-        /// Singleton access to Transfers controller
-        /// </summary>
-        ITransfersController Transfers { get;}
-
-        /// <summary>
         /// Singleton access to Transactions controller
         /// </summary>
         ITransactionsController Transactions { get;}
+
+        /// <summary>
+        /// Singleton access to Transfers controller
+        /// </summary>
+        ITransfersController Transfers { get;}
 
     }
 }
