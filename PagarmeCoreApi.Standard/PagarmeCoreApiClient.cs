@@ -102,17 +102,6 @@ namespace PagarmeCoreApi.Standard
         }
 
         /// <summary>
-        /// Singleton access to Transactions controller
-        /// </summary>
-        public ITransactionsController Transactions
-        {
-            get
-            {
-                return TransactionsController.Instance;
-            }
-        }
-
-        /// <summary>
         /// Singleton access to Transfers controller
         /// </summary>
         public ITransfersController Transfers
@@ -120,6 +109,17 @@ namespace PagarmeCoreApi.Standard
             get
             {
                 return TransfersController.Instance;
+            }
+        }
+
+        /// <summary>
+        /// Singleton access to Transactions controller
+        /// </summary>
+        public ITransactionsController Transactions
+        {
+            get
+            {
+                return TransactionsController.Instance;
             }
         }
         /// <summary>
@@ -145,8 +145,9 @@ namespace PagarmeCoreApi.Standard
         /// <summary>
         /// Client initialization constructor
         /// </summary>
-        public PagarmeCoreApiClient(string basicAuthUserName, string basicAuthPassword)
+        public PagarmeCoreApiClient(string serviceRefererName, string basicAuthUserName, string basicAuthPassword)
         {
+            Configuration.ServiceRefererName = serviceRefererName;
             Configuration.BasicAuthUserName = basicAuthUserName;
             Configuration.BasicAuthPassword = basicAuthPassword;
         }
